@@ -1,0 +1,1358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>4. Algorithms - Lenticular Lens</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../GitHub2.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-algorithms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lenticular Lens" class="md-header-nav__button md-logo" aria-label="Lenticular Lens">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lenticular Lens
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              4. Algorithms
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lenticular Lens" class="md-nav__button md-logo" aria-label="Lenticular Lens">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lenticular Lens
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../01.Introduction/" title="1. Introduction" class="md-nav__link">
+      1. Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../02.Terminology/" title="2. Terminology" class="md-nav__link">
+      2. Terminology
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../03.Ontology/" title="3. Link Annotation Ontology" class="md-nav__link">
+      3. Link Annotation Ontology
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4. Algorithms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="4. Algorithms" class="md-nav__link md-nav__link--active">
+      4. Algorithms
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-discrete-strength" class="md-nav__link">
+    4.1 Discrete Strength
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Discrete Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedded" class="md-nav__link">
+    Embedded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact" class="md-nav__link">
+    Exact
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate" class="md-nav__link">
+    Intermediate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundex" class="md-nav__link">
+    Soundex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-delta" class="md-nav__link">
+    Time Delta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-continuous-strength" class="md-nav__link">
+    4.2  Continuous Strength
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2  Continuous Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#levenshtein" class="md-nav__link">
+    Levenshtein
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundex-approximation" class="md-nav__link">
+    Soundex Approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approx-over-same-soundex" class="md-nav__link">
+    Approx over Same-Soundex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloothooft" class="md-nav__link">
+    Bloothooft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-intersection" class="md-nav__link">
+    Word Intersection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-intersection" class="md-nav__link">
+    List Intersection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team" class="md-nav__link">
+    TeAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-result-combination" class="md-nav__link">
+    4.3 Result Combination
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Result Combination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#t-norms" class="md-nav__link">
+    T-norms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-conorms" class="md-nav__link">
+    T-conorms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../05.LinkConstruction/" title="4. Linkset - Link Construction" class="md-nav__link">
+      4. Linkset - Link Construction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../06.LinkManipulation/" title="5. Lens - Link Manipulation" class="md-nav__link">
+      5. Lens - Link Manipulation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../07.LinkValidation/" title="6. Link Validation" class="md-nav__link">
+      6. Link Validation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../08.LinkExport/" title="7. Link Export" class="md-nav__link">
+      7. Link Export
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../09.DataIntegration/" title="8. Data Integration" class="md-nav__link">
+      8. Data Integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../10.Installation/" title="9. Using Lenticular Lens" class="md-nav__link">
+      9. Using Lenticular Lens
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../11.References/" title="10. References" class="md-nav__link">
+      10. References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-discrete-strength" class="md-nav__link">
+    4.1 Discrete Strength
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Discrete Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedded" class="md-nav__link">
+    Embedded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact" class="md-nav__link">
+    Exact
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate" class="md-nav__link">
+    Intermediate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundex" class="md-nav__link">
+    Soundex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-delta" class="md-nav__link">
+    Time Delta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-continuous-strength" class="md-nav__link">
+    4.2  Continuous Strength
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2  Continuous Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#levenshtein" class="md-nav__link">
+    Levenshtein
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundex-approximation" class="md-nav__link">
+    Soundex Approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approx-over-same-soundex" class="md-nav__link">
+    Approx over Same-Soundex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloothooft" class="md-nav__link">
+    Bloothooft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-intersection" class="md-nav__link">
+    Word Intersection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-intersection" class="md-nav__link">
+    List Intersection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team" class="md-nav__link">
+    TeAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-result-combination" class="md-nav__link">
+    4.3 Result Combination
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Result Combination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#t-norms" class="md-nav__link">
+    T-norms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-conorms" class="md-nav__link">
+    T-conorms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="4-algorithms">4. Algorithms<a class="headerlink" href="#4-algorithms" title="Permanent link">&para;</a></h1>
+<p>This section presents the catalogue of algorithms available in the Lenticular Lens and the standard expected Inputs and Outputs.</p>
+<p>The system offers a variety of existing algorithms from which the user can choose one or more in order to perform the matching among. These algorithms apply, for example, to strings, dates or URIs. 
+Here by we describe the ones currently offered by the system and how they are meant to be used:</p>
+<ul>
+<li>Embedded</li>
+<li>Exact</li>
+<li>Intermediate</li>
+<li>Levenshtein</li>
+<li>Soundex distance</li>
+<li>Bloothooft</li>
+<li>Word Intersection</li>
+<li>List Intersection</li>
+<li>Numbers</li>
+<li>Time Delta</li>
+<li>TeAM (Text Approximation Match)</li>
+</ul>
+<h2 id="41-discrete-strength">4.1 Discrete Strength<a class="headerlink" href="#41-discrete-strength" title="Permanent link">&para;</a></h2>
+<p>Her we present algorithms for which the resulting strength of a matched pair of resources is assigned the value of 1 as 0 means a match could not be found.</p>
+<h3 id="embedded">Embedded<a class="headerlink" href="#embedded" title="Permanent link">&para;</a></h3>
+<p>The Embedded method extracts an alignment already provided within the source dataset. The extraction relies on the value of the linking property, i.e. property of the source that holds the identifier of the target (IRI of the target). The inconvenience in generating a linkset in such way is that the real mechanism used to create the existing alignment is not explicitly provided by the source dataset.</p>
+<p>Example 1 shows a sample of the <a href="https://www.grid.ac/downloads">Grid</a> dataset with embedded links. With such links, Grid connects its instances to external datasets such as Wikidata for example using the link predicate: <code>grid:hasWikidataId</code> illustrated in Example 1 with the linkset graph <code>ex:EmbeddedLinkset</code>.</p>
+<details class="example" open="open"><summary><strong>Example 1</strong>: Generating a linkset using the Embedded algorithm</summary><div class="highlight"><pre><span></span><code><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1001.0</span><span class="w"></span>
+<span class="w">    </span><span class="nn">foaf:</span><span class="nt">homepage</span><span class="w">          </span><span class="nv">&lt;http://www.anu.edu.au/&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">             </span><span class="s">&quot;Australian National University&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">isni</span><span class="w">              </span><span class="s">&quot;0000 0001 2180 7477&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">hasWikidataId</span><span class="w">     </span><span class="nn">wikidata:</span><span class="nt">Q127990</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="err">•</span><span class="w"></span>
+
+<span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1002.3</span><span class="w"> </span>
+<span class="w">    </span><span class="nn">foaf:</span><span class="nt">homepage</span><span class="w">          </span><span class="nv">&lt;http://www.monash.edu/&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">             </span><span class="s">&quot;Monash University&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">isni</span><span class="w">              </span><span class="s">&quot;0000 0004 1936 7857&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">hasWikidataId</span><span class="w">     </span><span class="nn">wikidata:</span><span class="nt">Q598841</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="err">•</span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">EmbeddedLinkset</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;&lt;</span><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1001.0</span><span class="w">   </span><span class="nn">grid:</span><span class="nt">hasWikidataId</span><span class="w">   </span><span class="nn">wikidata:</span><span class="nt">Q127990</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">&lt;&lt;</span><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1002.3</span><span class="w">   </span><span class="nn">grid:</span><span class="nt">hasWikidataId</span><span class="w">   </span><span class="nn">wikidata:</span><span class="nt">Q598841</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">}</span><span class="w">   </span>
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h3 id="exact">Exact<a class="headerlink" href="#exact" title="Permanent link">&para;</a></h3>
+<p>This method is used to align source and target’s IRIs whenever their respective user selected property values are identical.</p>
+<p>In Example 2, the linkset <code>ex:ExactLinkset</code> is generated using the exact method over the predicate <code>rdfs:label</code>. Although only sharing the exact same name, these two entities are clearly not the same.</p>
+<details class="example" open="open"><summary><strong>Example 2</strong>: Generating a linkset using the Exact algorithm</summary><div class="highlight"><pre><span></span><code><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1019.9</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">             </span><span class="s">&quot;Victoria University&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">wikipediaPage</span><span class="w">      </span><span class="nn">wiki:</span><span class="nt">Victoria_University</span><span class="p">,</span><span class="err">_Australia</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">grid:</span><span class="nt">establishedYear</span><span class="w">    </span><span class="s">&quot;1916&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">gridC:</span><span class="nt">abbreviation</span><span class="err">&gt;</span><span class="w">     </span><span class="s">&quot;VU&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">prefLabel</span><span class="w">          </span><span class="s">&quot;Victoria University&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="err">•••</span><span class="w"></span>
+
+<span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.449929</span><span class="p">.</span><span class="err">b</span><span class="w"></span>
+<span class="w">   </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">              </span><span class="s">&quot;Victoria University&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="nn">grid:</span><span class="nt">wikipediaPage</span><span class="w">       </span><span class="nv">&lt;https://en.wikipedia.org/wiki/Victoria_University_Uganda&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="nn">grid:</span><span class="nt">establishedYear</span><span class="w">     </span><span class="s">&quot;2011&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#gYear&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="nn">gridC:</span><span class="nt">abbreviation</span><span class="err">&gt;</span><span class="w">      </span><span class="s">&quot;VUU&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="nn">skos:</span><span class="nt">prefLabel</span><span class="w">           </span><span class="s">&quot;Victoria University&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">•••</span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">ExactLinkset</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;&lt;</span><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.1019.9</span><span class="w">   </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w">   </span><span class="nn">institutes:</span><span class="nt">grid</span><span class="mf">.449929</span><span class="p">.</span><span class="err">b&gt;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<p><BR></p>
+<h3 id="intermediate">Intermediate<a class="headerlink" href="#intermediate" title="Permanent link">&para;</a></h3>
+<p>The method aligns the source and the target’s IRIs via an intermediate database by using properties that potentially present different descriptions of the same entity, such as country name and country code. This is possible by providing an intermediate dataset that binds the two alternative descriptions to the very same identifier.</p>
+<details class="example"><summary><strong>Example 3.1</strong>: Generating a linkset using the Intyermediate-Datatse algorithm</summary><p>In the example below, it is possible to align the source and target country 
+entities using the properties country and iso-3 via the intermediate dataset
+because it contains the information described at both, the Source and Target.
+<div class="highlight"><pre><span></span><code><span class="nn">dataset:</span><span class="nt">Source-Dataset</span><span class="w">                       </span><span class="nn">dataset:</span><span class="nt">Intermediate-Dataset</span><span class="w"></span>
+<span class="p">{</span><span class="w">                                            </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">1</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Benin&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                 </span><span class="err">ex</span><span class="p">:</span><span class="mi">7</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">2</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Cote d&#39;Ivoire&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">              </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Cote d&#39;Ivoire&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">3</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Netherlands&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                </span><span class="nn">ex:</span><span class="nt">code</span><span class="w"> </span><span class="s">&quot;CIV&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">}</span><span class="w">   </span>
+<span class="w">                                                </span><span class="err">ex</span><span class="p">:</span><span class="mi">8</span><span class="w">                             </span>
+<span class="nn">dataset:</span><span class="nt">Target-Datas</span><span class="w">                                </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Benin&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">{</span><span class="w">                                                   </span><span class="nn">ex:</span><span class="nt">code</span><span class="w"> </span><span class="s">&quot;BEN&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">4</span><span class="w"> </span><span class="nn">ex:</span><span class="nt">iso-3</span><span class="w"> </span><span class="s">&quot;CIV&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">5</span><span class="w"> </span><span class="nn">ex:</span><span class="nt">iso-3</span><span class="w"> </span><span class="s">&quot;NLD&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                       </span><span class="err">ex</span><span class="p">:</span><span class="mi">9</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">6</span><span class="w"> </span><span class="nn">ex:</span><span class="nt">iso-3</span><span class="w"> </span><span class="s">&quot;BEN&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                           </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Netherlands&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">                                                   </span><span class="nn">ex:</span><span class="nt">code</span><span class="w"> </span><span class="s">&quot;NLD&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">                                             </span><span class="p">}</span><span class="w"></span>
+<span class="c"># --- ALIGNMENT -----------------------------</span><span class="w"></span>
+<span class="c">#   • If rdfs:label is aligned with ex:name </span><span class="w"></span>
+<span class="c">#   • AND ex:iso-3 is aligned with ex:code,</span><span class="w"></span>
+<span class="c">#   • We then get the following linkset:</span><span class="w"></span>
+<span class="c"># -------------------------------------------</span><span class="w"></span>
+<span class="w">    </span><span class="nn">linkset:</span><span class="nt">Match-Via-Intermediate</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">1</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">6</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">2</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">4</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">3</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">5</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<details class="example" open="open"><summary><strong>Example 3.2</strong>: Generating a linkset using the Intyermediate-Datatse algorithm</summary><p>In this second example, it is also possible to align the source and target datasets 
+using the the authoritative intermediate dataset as it contains information described at both, the Source and Target.
+<div class="highlight"><pre><span></span><code><span class="nn">dataset:</span><span class="nt">Source-Dataset</span><span class="w">                       </span><span class="nn">dataset:</span><span class="nt">Intermediate-Dataset</span><span class="w"></span>
+<span class="p">{</span><span class="w">                                            </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">10</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Rembrandt&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">             </span><span class="err">ex</span><span class="p">:</span><span class="mi">70</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">20</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;van Gogh&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                  </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Vincent Willem van Gogh&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">30</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Vermeer&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">                   </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Vincent van Gogh&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">                                                    </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;van Gogh&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">                                                </span><span class="err">ex</span><span class="p">:</span><span class="mi">80</span><span class="w">                             </span>
+<span class="nn">dataset:</span><span class="nt">Target-Datas</span><span class="w">                                </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Rembrandt&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">{</span><span class="w">                                                   </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Rembrandt van Rijn&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">40</span><span class="w"> </span><span class="nn">schema:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Rembrandt van Rijn&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">50</span><span class="w"> </span><span class="nn">schema:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Vincent van Gogh&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">       </span><span class="err">ex</span><span class="p">:</span><span class="mi">90</span><span class="w"></span>
+<span class="w">    </span><span class="err">ex</span><span class="p">:</span><span class="mi">60</span><span class="w"> </span><span class="nn">schema:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Johannes Vermeer&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">           </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Johannes Vermeer&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">                                                    </span><span class="nn">ex:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Vermeer&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">                                             </span><span class="p">}</span><span class="w"></span>
+<span class="c"># --- ALIGNMENT ------------------------------------</span><span class="w"></span>
+<span class="c">#   • If rdfs:label is aligned with ex:name </span><span class="w"></span>
+<span class="c">#   • AND schema:name is also aligned with ex:name,</span><span class="w"></span>
+<span class="c">#   • we then get the following linkset:</span><span class="w"></span>
+<span class="c"># --------------------------------------------------</span><span class="w"></span>
+<span class="w">    </span><span class="nn">linkset:</span><span class="nt">Match-Via-Intermediate</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">10</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">40</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">20</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">50</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mi">30</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="err">ex</span><span class="p">:</span><span class="mi">60</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<p><br></p>
+<h3 id="soundex">Soundex<a class="headerlink" href="#soundex" title="Permanent link">&para;</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Soundex">Soundex</a> is a phonetic algorithm for indexing names by sound, as pronounced in English. The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling. The algorithm mainly encodes consonants; a vowel will not be encoded unless it is the first letter. <br></p>
+<details class="example" open="open"><summary><strong>Example 4</strong>: Generating a linkset using the Soundex algorithm</summary><p>The examples below shows the encoding of different names. Here, the size 
+parameter indicates a degree of similarity through the length of the 
+respective soundex codes. For example at  size=3, Albert and Albertine 
+have the same soundex representation while at size=5 their  respective 
+representations differ. In the Lenticular lens, the default size is set 
+to 3.
+<div class="highlight"><pre><span></span><code><span class="c"># -----------------------------</span><span class="w"></span>
+<span class="c"># INPUT          SIZE 3   SIZE 5  </span><span class="w"></span>
+<span class="c"># -----------------------------</span><span class="w"></span>
+<span class="c"># A.             A000     A00000                                  </span><span class="w"></span>
+<span class="c"># AL             A400     A40000                                 </span><span class="w"></span>
+<span class="c"># ALI            A400     A40000                               </span><span class="w"></span>
+<span class="c"># ALBERT         A416     A41630                                </span><span class="w"></span>
+<span class="c"># ALBERTINE      A416     A41635</span><span class="w"></span>
+
+<span class="err">ex</span><span class="p">:</span><span class="mf">128.45</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">              </span><span class="s">&quot;ALBERT&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="err">•••</span><span class="w"></span>
+
+<span class="err">ex</span><span class="p">:</span><span class="mi">6852</span><span class="p">:</span><span class="mi">28</span><span class="w"></span>
+<span class="w">   </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">               </span><span class="s">&quot;ALBERTINE&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">•••</span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">ExactLinkset</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;&lt;ex</span><span class="p">:</span><span class="mf">128.45</span><span class="w">   </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w">   </span><span class="err">ex</span><span class="p">:</span><span class="mi">6852</span><span class="p">:</span><span class="mi">28</span><span class="err">&gt;&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<p><br></p>
+<h3 id="numbers">Numbers<a class="headerlink" href="#numbers" title="Permanent link">&para;</a></h3>
+<p>The method is used to align the source and the target IRIs whenever the delta difference between   values (number/date) of the user selected properties is within a preset delta-threshold. </p>
+<details class="example" open="open"><summary><strong>Example 5</strong></summary><p>For example, if two entities have been aligned based on the similarity of their names but an extra check is to be investigated based on their respective year of birth, setting the delta-threshold to 1 year will ensure that the birth dates assigned to the two entities are no more than one year appart.</p>
+</details>
+<p><br></p>
+<h3 id="time-delta">Time Delta<a class="headerlink" href="#time-delta" title="Permanent link">&para;</a></h3>
+<p>This function allows for finding co-referent entities on the basis of a <strong>minimum time difference</strong> between the times reported by the source and the target entities. For example, if the value zero is assigned to the time difference parameter, then, for a matched to be found, the time of the target and the one of the source are to be the exact same times. While accounting for margins of error, one may consider a pair of entities to be co-referent if the real entities are born lambda days, months or years apart among other-things (similar name, place..). </p>
+<p><span style="color:blue"><strong>Time Delta before, After or Between.</strong> </span>
+Other ways of using time delta are also possible. Because Time Delta has no direction or sign (+ or -), it is not possible to require that the time documented at the source entity occurs before or after the one reported by the target&rsquo;s event. With the <code>before / After</code> options, this is possible. Using the <code>Between</code> option, we make it possible for the user to define the time interval in which both the source and target reported times can be viewed as acceptable.</p>
+<details class="example" open="open"><summary><strong>Example 6</strong>: </summary><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h2 id="42-continuous-strength">4.2  Continuous Strength<a class="headerlink" href="#42-continuous-strength" title="Permanent link">&para;</a></h2>
+<p>Her we present algorithms for which the resulting strength of a matched pair of resources is in the range ]0, 1] where 0 means a match could not be found while 1 means a perfect match is found.</p>
+<h3 id="levenshtein">Levenshtein<a class="headerlink" href="#levenshtein" title="Permanent link">&para;</a></h3>
+<p>This ​method is used to align ​​source a​nd ​​target’s IRIs whenever the similarity score of their respective user selected property values are ​​above a given ​Levenshtein Distance threshold​.</p>
+<p><a href="https://en.wikipedia.org/wiki/Edit_distance">Levenshtein (a.k.a. Edit Distance)</a> is a way of quantifying how ​dissimilar two strings (e.g., words) are to one another by counting the minimum number of operations ​ε ​ (​removal, insertion, or substitution of a character in the string)​ required to transform one string into the other. For example, ​the ​Levenshtein distance between &ldquo;kitten&rdquo; and &ldquo;sitting&rdquo; is ​ε ​= 3 as it requires two substitutions (&ldquo;s&rdquo; for &ldquo;k&rdquo; and &ldquo;i&rdquo; for &ldquo;e&rdquo;) and one insertion of &ldquo;g&rdquo; at the end.</p>
+<p><strong>Normalisation ​Ω​:</strong> In the <strong>Lenticular Lens</strong>, the ​similarity score ​Ω ​of a matching pair of resources is quantified in the interval ​[0, 1]​. For this, the​ dissimilarity score ​ε expressing the ​minimum number of operations to perform for ​two strings to be the same ​is normalised as ​Ω based on the length of the longest string. The ​dissimilarity score​​ ε​ = 3 ​between ​&rdquo;kitten&rdquo; and &ldquo;sitting&rdquo; is then normalised to a ​similarity score Ω​ ​=​ ​1 - 3 / 7 = 0.57​.​</p>
+<p><strong>Minimum threshold ​φ:</strong> Using this algorithm, ​a ​minimum threshold valueφ​ ​must be set in the interval ​[0,1], ​such that finding any matched pairs of IRIs based on the similarity of their respective property values depends on whether or not the computed ​Ω is ​equal or above ​φ​. A threshold ​φ = 1 equates an exact match. In our previous example, if a ​minimum threshold of ​φ = ​0.7 is set, &ldquo;kitten&rdquo; and &ldquo;sitting&rdquo; will not be matched. ​In short, ​φ is the user defined threshold when the similarity score ​Ω is selected for accepting or rejecting a match.</p>
+<p><strong>Maximum character error threshold ​𝛿:​</strong> In case the ​original edit distance score ​ε (minimum number of operations score) is preferred, the number of character errors ​𝛿 ​of choice is used instead as threshold for deciding whether a match is accepted or rejected. However, for consistency purposes, the corresponding normalisation value ​Ω is still computed for the minimum number of operations score computed ​ε​. For instance, in our previous example, if a ​maximum ​characters errors i​s set to ​𝛿 = 3, &ldquo;kitten&rdquo; and &ldquo;sitting&rdquo; will be matched but the computed strength will be ​Ω = ​0.57 a​nd ​not ​ε = 3 as is it only serves the purpose of decision maker. I​n short, ​𝛿 i​s the user defined threshold when the dissimilarity score ε​ ​is selected for accepting or rejecting a match.</p>
+<details class="example" open="open"><summary><strong>Example 7</strong>: The Levenshtein options</summary><div class="highlight"><pre><span></span><code>    1. l_dist(Rembrand van Rijn, Rembrandt Harmensz van Rijn) = 10
+    2. Normalised_l_dist ​(Rembrand van Rijn, Rembrandt Harmensz van Rijn) = 0.63
+
+    &gt;&gt;&gt; If ​φ (Minimum threshold) = 0.7 
+    &gt;&gt;&gt; t​hen ​[​Rembrand van Rijn] owl:sameAs [Rembrandt Harmensz van Rijn] 
+    &gt;&gt;&gt; is rejected​ 
+    &gt;&gt;&gt; because Ω​ = 0.63 &lt; φ​.
+
+    &gt;&gt;&gt; If ​δ (Maximum character error threshold) = 5 
+    &gt;&gt;&gt; t​hen [​​Rembrand van Rijn] and [Rembrandt Harmensz van Rijn] is ​rejected 
+    &gt;&gt;&gt; because ε ​= 10 &gt;​ ​δ.
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h3 id="soundex-approximation">Soundex Approximation<a class="headerlink" href="#soundex-approximation" title="Permanent link">&para;</a></h3>
+<p>This option is performed in two phases. First, the string values of the user selected properties are normalised (converted to a soundex code). Then a user selected matcher (Levenshtein, Jaro, jaro-Winkler&hellip;) is run over the normalised string (Soundex code).</p>
+<details class="example" open="open"><summary><strong>Example 8</strong></summary><p>For example, given <code>ex:E1</code> and ex:E2, the matching strength using Edit Distance is 1 - &#8539; = 0.875. When directly performing an Edit distance match or a Soundex, we respectively get 0.625 and 0 as strengths.
+<div class="highlight"><pre><span></span><code><span class="c"># -------------------------------</span><span class="w"></span>
+<span class="c"># INPUT          SIZE 3   SIZE 4  </span><span class="w"></span>
+<span class="c"># -------------------------------</span><span class="w"></span>
+<span class="c"># Carretta       C630     C6300                                  </span><span class="w"></span>
+<span class="c"># Kareta         K630     K6300                                 </span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">E1</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Carretta&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="nn">ex:</span><span class="nt">E2</span><span class="w">  </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">  </span><span class="s">&quot;Kareta&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">ExactLinkset</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;&lt;</span><span class="nn">ex:</span><span class="nt">E1</span><span class="w">   </span><span class="nn">skos:</span><span class="nt">closeMatch</span><span class="w">   </span><span class="nv">&lt;ex:E2&gt;</span><span class="err">&gt;</span><span class="w"> </span><span class="nn">ll:</span><span class="nt">hasMatchingStrength</span><span class="w">  </span><span class="mf">0.875</span><span class="p">.</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<p><br></p>
+<h3 id="approx-over-same-soundex">Approx over Same-Soundex<a class="headerlink" href="#approx-over-same-soundex" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Lenticular Lens</strong>, Soundex can also be used as a first filtering step (string normalisation). This means that first we select all pairs sharing the same Soundex code. Then, for each of these pairs an extra string sequence matching algorithm such as (Levenshtein, Jaro, Jaro-Winkler&hellip;) is applied to the original pair of matched strings (not the Soundex codes) to determine the strength of the match in the interval ]0, 1].</p>
+<details class="example" open="open"><summary><strong>Example 9</strong>: Generating a linkset using the Soundex algorithm</summary><p>In the table below, the normalisation of both <code>Louijs Rocourt</code> and <code>`Lowis Ricourt</code> 
+becomes <code>L200 R263</code> leading to an edit distance of 0 and a relative strength of 1. However,
+computing the same names using directly an edit distance results in an edit distance of 3 
+and a relative matching strength of 0.79.
+<div class="highlight"><pre><span></span><code><span class="err">The</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">below</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">implementation</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Soundex</span><span class="w"> </span><span class="err">Distance</span><span class="w"> </span>
+<span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Lenticular</span><span class="w"> </span><span class="err">Lens</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">how</span><span class="w"> </span><span class="err">it</span><span class="w"> </span><span class="err">compares</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">Edit</span><span class="w"> </span><span class="err">Distance</span><span class="w"></span>
+<span class="err">over</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">original</span><span class="w"> </span><span class="err">names</span><span class="w"> </span><span class="p">(</span><span class="err">no</span><span class="w"> </span><span class="err">soundex-based</span><span class="w"> </span><span class="err">normalisation</span><span class="p">).</span><span class="w"></span>
+
+<span class="err">------------------------------------------------------------------------------------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">Source</span><span class="w">                      </span><span class="err">Target</span><span class="w">                     </span><span class="err">E</span><span class="p">.</span><span class="w"> </span><span class="err">Dist</span><span class="w">  </span><span class="err">Rel</span><span class="p">.</span><span class="w"> </span><span class="err">distance</span><span class="w">  </span><span class="err">Source</span><span class="w"> </span><span class="err">soundex</span><span class="w">       </span><span class="err">Target</span><span class="w">  </span><span class="err">soundex</span><span class="w">       </span><span class="err">Code</span><span class="w"> </span><span class="err">E</span><span class="p">.</span><span class="w"> </span><span class="err">Dist</span><span class="w">  </span><span class="err">Code</span><span class="w"> </span><span class="err">Rel</span><span class="p">.</span><span class="w"> </span><span class="err">Dist</span><span class="w"></span>
+<span class="err">------------------------------------------------------------------------------------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">Jasper</span><span class="w"> </span><span class="err">Cornelisz</span><span class="p">.</span><span class="w"> </span><span class="err">Lodder</span><span class="w">    </span><span class="err">Jaspar</span><span class="w"> </span><span class="err">Cornelisz</span><span class="w"> </span><span class="err">Lodder</span><span class="w">          </span><span class="mi">2</span><span class="w">           </span><span class="mf">0.92</span><span class="w">  </span><span class="err">J</span><span class="mi">216</span><span class="w"> </span><span class="err">C</span><span class="mi">654</span><span class="w"> </span><span class="err">L</span><span class="mi">360</span><span class="w">       </span><span class="err">J</span><span class="mi">216</span><span class="w"> </span><span class="err">C</span><span class="mi">654</span><span class="w"> </span><span class="err">L</span><span class="mi">360</span><span class="w">                   </span><span class="mi">0</span><span class="w">             </span><span class="mf">1.0</span><span class="w"></span>
+<span class="err">Barent</span><span class="w"> </span><span class="err">Teunis</span><span class="w">               </span><span class="err">Barent</span><span class="w"> </span><span class="err">Teunisz</span><span class="w"> </span><span class="err">gen</span><span class="p">.</span><span class="w"> </span><span class="err">Drent</span><span class="w">       </span><span class="mi">12</span><span class="w">           </span><span class="mf">0.52</span><span class="w">  </span><span class="err">B</span><span class="mi">653</span><span class="w"> </span><span class="err">T</span><span class="mi">520</span><span class="w">            </span><span class="err">B</span><span class="mi">653</span><span class="w"> </span><span class="err">T</span><span class="mi">520</span><span class="w"> </span><span class="err">G</span><span class="mi">500</span><span class="w"> </span><span class="err">D</span><span class="mi">653</span><span class="w">             </span><span class="mi">10</span><span class="w">            </span><span class="mf">0.47</span><span class="w"></span>
+<span class="err">Louijs</span><span class="w"> </span><span class="err">Rocourt</span><span class="w">              </span><span class="err">Louys</span><span class="w"> </span><span class="err">Rocourt</span><span class="w">                    </span><span class="mi">2</span><span class="w">           </span><span class="mf">0.86</span><span class="w">  </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">            </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">                        </span><span class="mi">0</span><span class="w">             </span><span class="mf">1.0</span><span class="w"></span>
+<span class="err">Louijs</span><span class="w"> </span><span class="err">Rocourt</span><span class="w">              </span><span class="err">Lowis</span><span class="w"> </span><span class="err">Ricourt</span><span class="w">                    </span><span class="mi">3</span><span class="w">           </span><span class="mf">0.79</span><span class="w">  </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">            </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">                        </span><span class="mi">0</span><span class="w">             </span><span class="mf">1.0</span><span class="w"></span>
+<span class="err">Louys</span><span class="w"> </span><span class="err">Rocourt</span><span class="w">               </span><span class="err">Lowis</span><span class="w"> </span><span class="err">Ricourt</span><span class="w">                    </span><span class="mi">3</span><span class="w">           </span><span class="mf">0.77</span><span class="w">  </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">            </span><span class="err">L</span><span class="mi">200</span><span class="w"> </span><span class="err">R</span><span class="mi">263</span><span class="w">                        </span><span class="mi">0</span><span class="w">             </span><span class="mf">1.0</span><span class="w"></span>
+<span class="err">Cornelis</span><span class="w"> </span><span class="err">Dircksz</span><span class="p">.</span><span class="w"> </span><span class="err">Clapmus</span><span class="w">   </span><span class="err">Cornelis</span><span class="w"> </span><span class="err">Clapmuts</span><span class="w">               </span><span class="mi">10</span><span class="w">            </span><span class="mf">0.6</span><span class="w">  </span><span class="err">C</span><span class="mi">654</span><span class="w"> </span><span class="err">D</span><span class="mi">620</span><span class="w"> </span><span class="err">C</span><span class="mi">415</span><span class="w">       </span><span class="err">C</span><span class="mi">654</span><span class="w"> </span><span class="err">C</span><span class="mi">415</span><span class="w">                        </span><span class="mi">5</span><span class="w">            </span><span class="mf">0.64</span><span class="w"></span>
+<span class="err">Geertruydt</span><span class="w"> </span><span class="err">van</span><span class="w"> </span><span class="err">den</span><span class="w"> </span><span class="err">Breemde</span><span class="w">  </span><span class="err">Geertruijd</span><span class="w"> </span><span class="err">van</span><span class="w"> </span><span class="err">den</span><span class="w"> </span><span class="err">Bremde</span><span class="w">        </span><span class="mi">4</span><span class="w">           </span><span class="mf">0.85</span><span class="w">  </span><span class="err">G</span><span class="mi">636</span><span class="w"> </span><span class="err">V</span><span class="mi">500</span><span class="w"> </span><span class="err">D</span><span class="mi">500</span><span class="w"> </span><span class="err">B</span><span class="mi">653</span><span class="w">  </span><span class="err">G</span><span class="mi">636</span><span class="w"> </span><span class="err">V</span><span class="mi">500</span><span class="w"> </span><span class="err">D</span><span class="mi">500</span><span class="w"> </span><span class="err">B</span><span class="mi">653</span><span class="w">              </span><span class="mi">0</span><span class="w">             </span><span class="mf">1.0</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<h3 id="bloothooft">Bloothooft<a class="headerlink" href="#bloothooft" title="Permanent link">&para;</a></h3>
+<p>This approximation method is specifically tailored for accessing the similarity between a pair of  IRIs for which the user selected property values are Dutch names. The algorithm basically normalises the given names by removing or replacing specific characters…. 
+The resulting normalised names are then pairwise compared using the Approximated Levenshtein Distance (see the description of Approximated Levenshtein Distance).</p>
+<details class="example" open="open"><summary><strong>Example 10</strong>: </summary><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h3 id="word-intersection">Word Intersection<a class="headerlink" href="#word-intersection" title="Permanent link">&para;</a></h3>
+<p>This approximation method is originally designed to find a subset of words within a larger text. However, it could also be used for any  pair of strings regardless of the strings sizes. Several options are available: </p>
+<ul>
+<li>Whether or not the order in which the words are found is important.</li>
+<li>Whether or not the computed strength of each word should be approximated or identical.</li>
+<li>Whether or not abbreviation should be detected.</li>
+<li>Whether the default stopping character should be used, not used or modified.</li>
+<li>A threshold on the number of words not approximated/identical.</li>
+<li>An overall  threshold for accepting or rejecting a match.</li>
+</ul>
+<details class="example" open="open"><summary><strong>Example 11</strong>: Expectation</summary><p>For example, it can be used for aligning 
+ - [Rembrand van Rijn] and [van Rijn Rembrandt]
+ - [Herdoopers anslagh op Amsterdam] and [Herdoopers anslagh op Amsterdam. 
+    Den x. may: 1535. Treur-spel.] regardless of the words&rsquo; order.</p>
+<details class="example" open="open"><summary><strong>Example 1</strong></summary><p>With argument APPROX set to True, similarity can be found between Rembrand and Rembrandt 
+(MODE-1). However, this is not possible in the inverse scenario (MODE-2). Furthermore, 
+when the order is of no importance (MODE-1) the sequence in which the intersection of 
+words appears is of no importance.
+<div class="highlight"><pre><span></span><code>       SMALL : Rembrand (van) Rijn
+         BIG : Rembrandt Harmensz. van Rijn 
+
+      MODE-1 : APPROX = True and ORDER = False
+       FOUND : [&#39;rijn&#39;, &#39;rembrandt&#39;]
+    STRENGTH : 0.97059  
+
+      MODE-2 : APPROX  = False and ORDER = True and 
+       FOUND : []
+    STRENGTH : 0.0
+</code></pre></div></p>
+</details>
+<details class="example" open="open"><summary><strong>Example 2</strong></summary><p>Because the match is performed over exact occurrences (APPROX = False) and the sequence 
+in which the matched words appear in the text is of importance (ORDER = True), elvervelt
+is the only intersection found in MODE-2 and thereby bringing the similarity strength to
+0.333. 
+<div class="highlight"><pre><span></span><code>       SMALL : Elvervelt, Henrik van
+         BIG : Henrik van Elvervelt 
+
+       MODE-1 : APPROX = True and ORDER = False
+        FOUND : [&#39;elvervelt&#39;, &#39;henrik&#39;, &#39;van&#39;]
+    STRENGTH : 1.0  
+
+      MODE-2 : APPROX = False and ORDER = True and 
+         FOUND : [&#39;elvervelt&#39;]
+     STRENGTH : 0.333                                      
+</code></pre></div></p>
+</details>
+<details class="example" open="open"><summary><strong>Example 3</strong></summary><p>In here all intersected words appear in the same sequence and without mismatch.
+<div class="highlight"><pre><span></span><code>       SMALL : Herdoopers anslagh op Amsterdam
+         BIG : Herdoopers anslagh op Amsterdam. Den x. may: 1535. Treur-spel. 
+
+       MODE-1 : APPROX = True and ORDER = False
+        FOUND : [&#39;herdoopers&#39;, &#39;anslagh&#39;, &#39;op&#39;, &#39;amsterdam&#39;]
+    STRENGTH : 1.0  
+
+      MODE-2 : APPROX = False and ORDER = True and 
+         FOUND : [&#39;herdoopers&#39;, &#39;anslagh&#39;, &#39;op&#39;, &#39;amsterdam&#39;]
+     STRENGTH : 1.0         
+</code></pre></div></p>
+</details>
+</details>
+<p><br></p>
+<h3 id="list-intersection">List Intersection<a class="headerlink" href="#list-intersection" title="Permanent link">&para;</a></h3>
+<p>This method is better suited for matching events. It helps establishing a relationship between the source and target entities whenever a list of entities from the source dataset intersects another list of entities stemmed from the target dataset. </p>
+<p>For illustration, suppose that we have the two events in Example 9. (1) Event one, defined by the source event-entities, documents event-entities that lists entities representing persons about to get married. This event is the <code>Intended-Marriage</code> event. (2) Event two is the <code>Marriage</code> event. It lists (i) entities representing persons that got married and (ii) the guests who attended the event. <br>
+Now that the two events are defined, let us imagine that we would like to find out which of the <code>Intended-Marriage</code> couple fulfilled its will to get married. For this to be true, we assume that a couple with the wish to be wed should end-up being present at a <code>Marriage</code> event, hopefully their own marriage. This means that, for a match to occur, a <strong>minimum of two elements from a list from the source</strong> must also belong to a list from the target. In other words, a match is to be generated whenever 100% (all) of the elements in a source&rsquo;s lists intersects a target&rsquo;s list. </p>
+<p>In this method, two thresholds are to be defined. The first threshold or <strong>similarity-threshold</strong> imposes a minimum accepted similarity score (generally in ]0, 1]) when elements stemmed from different lists are compared. Passing this threshold is interpreted as the occurrence of an intersection between elements of two lists. The second threshold, the <strong>intersection-threshold</strong> expressed in quantity or percentage, denotes the minimum number of intersections that must occur for a link to be created. <br>
+In practice, looking at Example 9, only events <code>ex: intended-1</code> and <code>ex:married-2</code> are a match as the pairs (<code>Catharina Reminck</code> , <code>Catharina Remink</code>) and (<code>Mr. Jean de Melie</code>, <code>Jean de Melie</code>) are respectively similar with a score of 0.94 and 0.82. aaaa</p>
+<details class="example" open="open"><summary><strong>Example 10</strong>: List Intersection</summary><p>A source dataset documenting events as lists of couple with the intention of getting married and a 
+target dataset with list of people at a wedding ceremony. Each of these latter lists is expected to
+includes the wed couple.</p>
+<div class="highlight"><pre><span></span><code><span class="err">------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">Source</span><span class="w"> </span><span class="err">Dataset</span><span class="w">                           </span><span class="err">Target</span><span class="w"> </span><span class="err">Dataset</span><span class="w"></span>
+<span class="err">------------------------------------------------------------------------</span><span class="w"></span>
+
+<span class="nn">ex:</span><span class="nt">intended-1</span><span class="w">                               </span><span class="nn">ex:</span><span class="nt">ceremony-1</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ex:</span><span class="nt">wife</span><span class="w">     </span><span class="s">&quot;Catharina Reminck&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">            </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Pieter Jas&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ex:</span><span class="nt">husband</span><span class="w">  </span><span class="s">&quot;Mr. Jean van de Melie&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">        </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Jacob Poppen&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">                                                 </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Gillis Graafland&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="nn">ex:</span><span class="nt">intended-2</span><span class="w">                                    </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Jacob Fransz. de Witt&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ex:</span><span class="nt">wife</span><span class="w">     </span><span class="s">&quot;Eva Oostrom&quot;</span><span class="w">  </span><span class="p">;</span><span class="w">                 </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Elisabeth van Daaken&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ex:</span><span class="nt">husband</span><span class="w">  </span><span class="s">&quot;Pieter de Vriest&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">             </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Catharina Berewouts&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">                                                 </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Aafje Hendricx&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="nn">ex:</span><span class="nt">intended-3</span><span class="w">                                    </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Anthony van Paembergh&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ex:</span><span class="nt">wife</span><span class="w">     </span><span class="s">&quot;Eva Oostrom ;                   ex:participant  &quot;</span><span class="err">Eva</span><span class="w"> </span><span class="err">van</span><span class="w"> </span><span class="err">Toorn</span><span class="s">&quot; ;</span>
+<span class="w">     </span><span class="nn">ex:</span><span class="nt">husband</span><span class="w">  </span><span class="s">&quot;Wiggert van Wesick&quot;</span><span class="w"> </span><span class="p">.</span><span class="w">          </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;Maria Bor&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">                                            </span><span class="nn">ex:</span><span class="nt">married-2</span><span class="w"></span>
+<span class="w">                                                </span><span class="nn">ex:</span><span class="nt">participant</span><span class="w">  </span><span class="s">&quot;J. van de Melie&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Bernardus van Vijven&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Margrita Schrik&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Johannes de Bruijn&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Maria Gosina Demol&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Agneta Swartepaart&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Hendrik de Lange&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                    </span><span class="s">&quot;Catharina Remink&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
+<p>With a Similarity-threshold set to 0.8 and an Intersection-threshold set to 2 or 100%, only events <code>ex:intended-1</code> and <code>ex:married-2</code> are a match as the pairs (<code>Catharina Reminck</code> , <code>Catharina Remink</code>) and (<code>Mr. Jean de Melie</code>, <code>Jean de Melie</code>) are respectively similar with a score of 0.94 and 0.82.</p>
+</details>
+<p><br></p>
+<h3 id="team">TeAM<a class="headerlink" href="#team" title="Permanent link">&para;</a></h3>
+<p>The TeAM (Text Approximation Match) method allows for the approximation of the relevance of a document to a query. Such approximation can be done using lexical similarity (word level similarity), semantic similarity or hybrid similarities. In this method, the focus is rather on the lexical similarity. Although tailored to text, it has been adapted to also be applicable to name-based similarity. We now provide an overview of the motivation context supporting the design and implementation of the algorithm.</p>
+<p>The Amsterdam&rsquo;s city archives (SAA) possesses physical handwritten inventories records where a record may be for example an inventory of goods (paintings, prints, sculpture, furniture, porcelain, etc.) owned by an Amsterdamer and mentioned in a last will. Interested in documenting the ownership of paintings from the 17<sup>th</sup> century, the Yale University Professor John Michael Montias compiled a database by transcribing 1280 physical handwritten inventories (scattered in the Netherlands) of goods. Now that a number of these physical inventories have been digitised using handwriting recognition, one of the goals of the Golden Agent project is to identify Montias&rsquo; transcriptions of painting selections within the digitised inventories. This problem can be generically reformulated as, given a <span style="color:blue"><em>source-segment database (e.g. Montias DB)</em></span> and a <span style="color:blue"><em>target-segment database (e.g. SAA)</em></span>, <em>find the best similar target segment  for each source segment</em>. </p>
+<p><div align="center"> <img alt="Inventory" src="../Images/Inventory.jpg" /> Fig 4.9: Digitisation of inventory documents available at the Amsterdam&rsquo;s city archives. </div> 
+<br></p>
+<details class="example" open="open"><summary><strong>Example 12</strong>: </summary><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h2 id="43-result-combination">4.3 Result Combination<a class="headerlink" href="#43-result-combination" title="Permanent link">&para;</a></h2>
+<p>This section addresses <strong>Complex Methods</strong> as ways to combine matching methods, not to be confused with the complexity of the underlying the methods. 
+All of the matching methods described earlier generate links with matching strength scores in the interval ]0, 1]. 
+We saw for example that the relative strength score between ​<code>Rembrand van Rijn</code> and <code>Rembrandt Harmensz van Rijn</code> is 0.63 using the Levenshtein algorithm and 0.74 using Soundex. 
+Those methods can be combined at time of creation of the linkset, using logic boxes, or afterwards, using lenses operators.</p>
+<p>When such combination happens, a decision is necessary regarding the calculation of the resulting strength score.
+For example, let us assume that links are created whenever a pair of datasets items (subject, object) either <strong>sounds alike</strong> or <strong>looks alike character-wise</strong>. 
+To accomplish that, it means that two methods have to be combined, for example, Soundex and Levenshtein. 
+Although combining the methods seems relatively easy, deciding on the matching score requires some extra thoughts. 
+In the example above of Rembrandt, shall we consider 0.63 or 0.74? Or their product?
+Here we discuss the rationals used in the <strong>Lenticular lens</strong> to support such decision.</p>
+<p>The two standard logic operators traditionally used are <strong>Conjunction (AND)</strong> and <strong>Disjunction (OR)</strong>. 
+The first takes the minimum strength and the latter takes the maximum strength. This applies for both <strong>classic values</strong> (True -1- or False -0-) and <strong>fuzzy values</strong> ( between 0 and 1 ). </p>
+<p>Since the results from matching methods are <strong>fuzzy values</strong> in the interval ]0,1], the table bellow illustrates the default behaviour of the Lenticular Lens when combining them.</p>
+<details class="example"><summary>Standard logic operations over conjunction (min) and disjunction (max)</summary><div class="highlight"><pre><span></span><code>Source                      Target                       Levenshtein  Soundex      OR(max)    AND(min)
+------------------------------------------------------------------------------------------------------
+Jasper Cornelisz. Lodder    Jaspar Cornelisz Lodder             0.92     1.00        1.00         0.92
+Rembrand van Rijn           Rembrandt Harmensz van Rijn         0.63     0.74        0.74         0.63
+Barent Teunis               Barent Teunisz gen. Drent           0.52     0.47        0.52         0.47
+</code></pre></div>
+
+</details>
+<p>However, more sophisticated operations can also be used, such as the <strong>T-norm binary operations</strong> as alternatives for <strong>Conjunction (AND)</strong> and the <strong>T-conorm binary operations</strong> as alternatives for <strong>Disjunction (OR)</strong> as provided in the next subsections.</p>
+<h3 id="t-norms">T-norms<a class="headerlink" href="#t-norms" title="Permanent link">&para;</a></h3>
+<p>A list of six different operations can be applied when dealing with methods combined by <strong>Conjunction</strong>. Here, we present them:</p>
+<ul>
+<li>
+<p>Minimum t-norm ⊤<sub>min</sub> (a, b) = min{a, b}</p>
+</li>
+<li>
+<p>Product t-norm ⊤<sub>prod</sub> (a, b) = a . b</p>
+</li>
+<li>
+<p>Łukasiewicz t-norm ⊤<sub>Luk</sub> (a, b) = max(0, a+b-1)</p>
+</li>
+<li>
+<p>Drastic t-norm ⊤<sub>D</sub> (a, b) = b (if a = 1) , a (if b = 1), 0 (otherwise)</p>
+</li>
+<li>
+<p>Nilpotent minimum ⊤<sub>nM</sub> (a, b) = min{a, b} (if a + b &gt; 1), 0 (otherwise)</p>
+</li>
+<li>
+<p>Hamacher product ⊤<sub>H<sub>0</sub></sub> (a, b) = 0 (if a = b = 0), ab / (a + b - ab) (otherwise)</p>
+</li>
+</ul>
+<p>The following table provides three case studies to illustrate the application of each of the aforementioned <strong>T-norm binary operations</strong>. They are presented in order from the less strict (<strong>⊤<sub>min</sub></strong>) to the most strict (<strong>⊤<sub>D</sub></strong>).</p>
+<table>
+<thead>
+<tr>
+<th align="left">Source, Target</th>
+<th align="center">Levenshtein, Soundex</th>
+<th>⊤<sub>min</sub></th>
+<th>⊤<sub>H<sub>0</sub></sub></th>
+<th>⊤<sub>prod</sub></th>
+<th>⊤<sub>nM</sub></th>
+<th>⊤<sub>Luk</sub></th>
+<th>⊤<sub>D</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Src</strong>: Jasper Cornelisz. Lodder <br> <strong>Trg</strong>: Jaspar Cornelisz Lodder</td>
+<td align="center">0.92, 1.00</td>
+<td>0.920</td>
+<td>0.920</td>
+<td>0.920</td>
+<td>0.920</td>
+<td>0.920</td>
+<td>0.920</td>
+</tr>
+<tr>
+<td align="left"><strong>Src</strong>: Rembrand van Rijn <br> <strong>Trg</strong>: Rembrandt Harmensz van Rijn</td>
+<td align="center">0.63, 0.74</td>
+<td>0.630</td>
+<td>0.516</td>
+<td>0.466</td>
+<td>0.630</td>
+<td>0.370</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td align="left"><strong>Src</strong>: Barent Teunis <br> <strong>Trg</strong>: Barent Teunisz gen. Drent</td>
+<td align="center">0.52, 0.47</td>
+<td>0.470</td>
+<td>0.328</td>
+<td>0.244</td>
+<td>0.000</td>
+<td>0.000</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t-conorms">T-conorms<a class="headerlink" href="#t-conorms" title="Permanent link">&para;</a></h3>
+<p>A list of six different operations can also be applied when dealing with methods combined by <strong>Disjunction</strong>. Here, we present them:</p>
+<ul>
+<li>
+<p>Maximum t-conorm ⊥<sub>max</sub> (a, b) = max{a, b}</p>
+</li>
+<li>
+<p>Probabilistic sum ⊥<sub>sum</sub> (a, b) = a + b - a.b</p>
+</li>
+<li>
+<p>Bounded sum ⊥<sub>Luk</sub> (a, b) = min{a + b, 1}</p>
+</li>
+<li>
+<p>Drastic t-conorm ⊥<sub>D</sub> (a, b) = b (if a=0), a (if b=0), 1 (otherwise)</p>
+</li>
+<li>
+<p>Nilpotent maximum ⊥<sub>nM</sub> (a, b) = max(a, b) (if a + b &lt; 1), 1 (otherwise)</p>
+</li>
+<li>
+<p>Einstein sum ⊥<sub>H<sub>2</sub></sub> (a, b) = (a + b) / (1 + ab)</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Source, Target</th>
+<th align="center">Levenshtein, Soundex</th>
+<th>⊤<sub>D</sub></th>
+<th>⊤<sub>Luk</sub></th>
+<th>⊤<sub>H<sub>2</sub></sub></th>
+<th>⊤<sub>sum</sub></th>
+<th>⊤<sub>nM</sub></th>
+<th>⊤<sub>max</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Src</strong>: Jasper Cornelisz. Lodder <br> <strong>Trg</strong>: Jaspar Cornelisz Lodder</td>
+<td align="center">0.92, 1.00</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td align="left"><strong>Src</strong>: Rembrand van Rijn <br> <strong>Trg</strong>: Rembrandt Harmensz van Rijn</td>
+<td align="center">0.63, 0.74</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.934</td>
+<td>0.904</td>
+<td>1.000</td>
+<td>0.740</td>
+</tr>
+<tr>
+<td align="left"><strong>Src</strong>: Barent Teunis <br> <strong>Trg</strong>: Barent Teunisz gen. Drent</td>
+<td align="center">0.52, 0.47</td>
+<td>1.000</td>
+<td>0.990</td>
+<td>0.796</td>
+<td>0.746</td>
+<td>0.520</td>
+<td>0.520</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>Suppose that, two data items E-1 and E-2 have the following information:</p>
+<ul>
+<li>
+<p>E-1</p>
+<ul>
+<li><strong>Name</strong>:  Titus Rembrandtsz. van Rijn</li>
+<li><strong>Mather</strong>: Saskia Uylenburgh</li>
+<li><strong>Father</strong>: Rembrand van Rijn</li>
+<li><strong>Parent&rsquo;s Marriage date</strong>: 1644-06-22
+<br></li>
+</ul>
+</li>
+<li>
+<p>E-2</p>
+<ul>
+<li><strong>Name</strong>: T. Rembrandtszoon van Rijn</li>
+<li><strong>Mather</strong>: Saske van Uijlenburg</li>
+<li><strong>Father</strong>: Rembrandt Harmensz van Rijn</li>
+<li><strong>Baptism date</strong>:1641-09-22</li>
+</ul>
+</li>
+</ul>
+<p>To interpret E-1 and E-2 as representing co-referent persons, the following four tests are proposed. </p>
+<details class="example"><summary><strong>Test-1 OR</strong></summary><p>Here, the names of E-1 and E-2 are to be compared using the <strong>Levenshtein</strong> and <strong>Soundex</strong> algorithms at a threshold of <strong>at least 0.7</strong>.</p>
+<div class="highlight"><pre><span></span><code>MATCHING RESULTS
+ - Levenshtein(Titus Rembrandtsz van Rijn, T. Rembrandtszoon van Rijn)  =&gt; 0.73 ✅
+ - sdx_1 = Soundex(Titus Rembrandtsz van Rijn) = T320 R516 V500 R250
+ - sdx_2 = Soundex(T. Rembrandtszoon van Rijn) = T000 R516 V500 R250
+ - Levenshtein(sdx_1, sdx_2)                                            =&gt; 0.89 ✅
+
+DISJUNCTIONS RESULTS
+ - names similarity   = t_conorm(0.73, 0.88, &#39;MAXIMUM&#39;)                 =&gt; 0.89 ✅
+ - names similarity   = t_conorm(0.73, 0.88, &#39;PROBABILISTIC&#39;)           =&gt; 0.97 ✅
+</code></pre></div>
+
+</details>
+<details class="example"><summary><strong>Test-2 AND</strong></summary><p>Names of the postulated mothers and fathers are to be similar at a threshold of at <strong>least 0.6</strong> using the <strong>Levenshtein</strong> algorithm.</p>
+<div class="highlight"><pre><span></span><code>MATCHING RESULTS
+ - Levenshtein(Saskia Uylenburgh, Saske van Uijlenburg)                 =&gt; 0.65 ✅
+ - Levenshtein(Rembrand van Rijn, Rembrandt Harmensz van Rijn)          =&gt; 0.63 ✅
+
+CONJUNCTION RESULTS
+ - Parent&#39;s names similarity  = t_norm(0.65, 0.63, &#39;MINIMUM&#39;)           =&gt; 0.63 ✅
+ - Parent&#39;s names similarity  = t_norm(0.65, 0.63, &#39;HAMACHER&#39;)          =&gt; 0.47 ❌
+</code></pre></div>
+
+</details>
+<details class="example"><summary><strong>Test-3</strong></summary><p>The period between the parent&rsquo;s <strong>marriage date</strong> on the one side and the <strong>child&rsquo;s baptism</strong> date on the other side are to be <strong>no more than 25 years apart</strong>.</p>
+<div class="highlight"><pre><span></span><code>MATCHING RESULTS
+ - Delta(1668-02-28, 1669-03-22, 25)                                       =&gt; 1.00 ✅
+</code></pre></div>
+
+</details>
+<details class="example" open="open"><summary><strong>Test-4 AND</strong></summary><p>Combining all above three tests considering a the conjunction fuzzy operator should result in a similarity score above or equal to 0.8.</p>
+<div class="highlight"><pre><span></span><code>--------------------------------------------------------------------------------------
+FINAL CONJUNCTIONS WITH A TRUTH VALUE LIST OF [0.850, 0.63, 1] 
+--------------------------------------------------------------------------------------
+  - t_norm_list([0.850, 0.63, 1], &#39;MINIMIUM&#39;)                           =&gt; 0.63 ❌
+  - t_norm_list([0.850, 0.63, 1], &#39;HAMACHER&#39;)                           =&gt; 0.58 ❌
+  - t_norm_list([0.850, 0.63, 1], &#39;PRODUCT&#39;)                            =&gt; 0.56 ❌
+  - t_norm_list([0.850, 0.63, 1], &#39;NILPOTENT&#39;)                          =&gt; 0.63 ❌
+  - t_norm_list([0.850, 0.63, 1], &#39;Łuk&#39;)                                =&gt; 0.52 ❌
+  - t_norm_list([0.850, 0.63, 1], &#39;DRASTIC&#39;)                            =&gt; 0.00 ❌
+
+--------------------------------------------------------------------------------------
+CONJUNCTIONS WITH A DIFFERENT LIST OF TRUTH VALUES [0.89, 0.82, 1]
+--------------------------------------------------------------------------------------
+ - t_norm_list([0.89, 0.82, 1], &quot;MINIMUM&quot;)                              =&gt; 0.82 ✅
+ - t_norm_list([0.89, 0.82, 1], &quot;HAMACHER&quot;)                             =&gt; 0.74 ❌
+ - t_norm_list([0.89, 0.82, 1], &quot;PRODUCT&quot;)                              =&gt; 0.73 ❌
+ - t_norm_list([0.89, 0.82, 1], &quot;NILPOTENYT&quot;)                           =&gt; 0.82 ✅
+ - t_norm_list([0.89, 0.82, 1], &quot;LUK&quot;)                                  =&gt; 0.71 ❌
+ - t_norm_list([0.89, 0.82, 1], &quot;DRASTIC&quot;)                              =&gt; 0.0  ❌
+
+--------------------------------------------------------------------------------------
+EXAMPLE USING MORE THAN ONE FUZZY LOGIC OPERATOR
+--------------------------------------------------------------------------------------
+  - Ops.t_norm(Ops.t_norm(0.850, 0.63, &#39;HAMACHER&#39;), 1, &#39;MINIMIUM&#39;)      =&gt; 0.57 ❌
+  - Ops.t_norm(Ops.t_norm(0.850, 0.63, &#39;MINIMIUM&#39;), 1, &#39;HAMACHER&#39;)      =&gt; 0.63 ❌
+</code></pre></div>
+
+</details>
+<p><strong>Conclusion</strong>: Given the <strong>evidence</strong> provided for E-1 and E-2  and the <strong>rules</strong> described above, the interpretation resulting from the chosen fuzzy logic operations leads to the conclusion that there is no sufficient evidence to infer that the underlying data items are co-referent. This rejection is mainly due to the low similarity of the parents&rsquo; names. If the resulting similarity were above 0.8, there would then be a better chance for the data items to be co-referent. Keep in mind that our conjectured rule asserts an identity relation for combination of scores only when above 0.8. A better data or more advanced algorithm could have helped.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03.Ontology/" title="3. Link Annotation Ontology" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3. Link Annotation Ontology
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05.LinkConstruction/" title="4. Linkset - Link Construction" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                4. Linkset - Link Construction
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.instant', 'navigation.expand'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
