@@ -446,7 +446,7 @@
 <p>This step concerns the <strong>selection of the resources under scrutiny</strong>, that can potentially end up co-referent entities across or within datasources during an entity matching process. To therefore perform a matching, one first needs not only to select datasource(s) but also restrict which resources will undergo the matching. The first way of doing so is by applying a type (class) restriction. This is mandatory in the Lenticular Lens process as matching algorithms are not fully automated. Down this line, further restrictions can be applied by forcing the value of a number of properties to lie within a certain range. A <code>Resource Selection</code> is thereby, the annotation of such process.</p>
 <p>In the ontology excerpt depicted in Figure 2.2 we propose the entity type <code>Resource Selection</code>, which is also a <code>void:Dataset</code> that is a <code>void:subset</code> of one or more <code>void:Dataset(s)</code>. It can also have further restrictions defined as <code>void:classPartion</code> and/or <code>void:propertyPartition</code>. While a <code>void:classPartion</code> solely consists in specifying the <strong>type of entity</strong> under scrutiny, the <code>void:propertyPartition</code> entails a little more. It consists in specifying a <strong>property</strong> or <strong>property path</strong> and the <strong>restriction</strong> that the selected property should undergo for the selection of the right entities for the further down the road entity matching process. Those restriction can be combined using a <code>Formula Description</code> given by <code>ll:hasFormulaDescription</code>.
  <div align="center"><br><img alt="EntitySelection" src="../Images/Ont-EntitySelection.jpg" />  Fig 2.2: Selecting a matching resource </div></p>
-<details class="example"><summary><strong>Example 1</strong>: Resource Selection</summary><p>In this example, the entity <code>resource:ResourceSelection-2</code> is a <code>ll:ResourceSelection</code> (and <code>void:Dataset</code>) subset of <code>resource:index_op_doopregister_raw_20190830</code> and also a collection (partition) of entities of type <code>pnv:PersonName</code> where each entity passed the filter test of (1) name in the English language which appears without trailing dots <code>"%...%"@en</code> and (2) birthdates within the interval [1600, 1699]. Finally, <code>resource:ResourceSelection-2</code> lists all entities of type <code>ll:PropertyConstraint</code> (<code>resource:PropertyConstraint-PHea6802ef02f99a848859</code>, <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> and <code>resource:PropertyConstraint-PH2580641bbdd572759cb9</code>) and elaborates on the logic expression that binds all restrictions. For example, the property restriction described by <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> documents that, applying the function <code>"minimal_date"@en</code> over dates in the format  <code>"YYYY-MM-DD"@en</code> with the year restriction of 1600 makes sure that only persons born on 1600 onwards are admitted.
+<details class="example" open="open"><summary><strong>Example 1</strong>: Resource Selection</summary><p>In this example, the entity <code>resource:ResourceSelection-2</code> is a <code>ll:ResourceSelection</code> (and <code>void:Dataset</code>) subset of <code>resource:index_op_doopregister_raw_20190830</code> and also a collection (partition) of entities of type <code>pnv:PersonName</code> where each entity passed the filter test of (1) name in the English language which appears without trailing dots <code>"%...%"@en</code> and (2) birthdates within the interval [1600, 1699]. Finally, <code>resource:ResourceSelection-2</code> lists all entities of type <code>ll:PropertyConstraint</code> (<code>resource:PropertyConstraint-PHea6802ef02f99a848859</code>, <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> and <code>resource:PropertyConstraint-PH2580641bbdd572759cb9</code>) and elaborates on the logic expression that binds all restrictions. For example, the property restriction described by <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> documents that, applying the function <code>"minimal_date"@en</code> over dates in the format  <code>"YYYY-MM-DD"@en</code> with the year restriction of 1600 makes sure that only persons born on 1600 onwards are admitted.
 <div class="highlight"><pre><span></span><code><span class="c">### RESOURCE 2</span><span class="w"></span>
 <span class="nn">resource:</span><span class="nt">ResourceSelection-2</span><span class="w"></span>
 
@@ -464,7 +464,6 @@
 <span class="s">        AND resource:PropertyConstraint-PH2580641bbdd572759cb9  </span>
 <span class="s">        AND  (resource:PropertyConstraint-PHea6802ef02f99a848859)&quot;&quot;&quot;@en .</span>
 
-
 <span class="s">resource:PropertyConstraint-PHea6802ef02f99a848859</span>
 <span class="s">    a                                        ll:PropertyConstraint ;</span>
 <span class="s">    void:property</span>
@@ -475,7 +474,6 @@
 
 <span class="s">    ll:hasFilterFunction                     &quot;not_ilike&quot;@en ;</span>
 <span class="s">    ll:hasValueFunction                      &quot;%...%&quot;@en .</span>
-
 
 <span class="s">resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</span>
 <span class="s">    a                                        ll:PropertyConstraint ;</span>
@@ -490,7 +488,6 @@
 <span class="s">    ll:hasFilterFunction                     &quot;minimal_date&quot;@en ;</span>
 <span class="s">    ll:hasValueFunction                      1600 ;</span>
 <span class="s">    ll:hasFormatFunction                     &quot;YYYY-MM-DD&quot;@en .</span>
-
 
 <span class="s">resource:PropertyConstraint-PH2580641bbdd572759cb9</span>
 <span class="s">    a                                        ll:PropertyConstraint ;</span>
