@@ -295,6 +295,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jaro" class="md-nav__link">
+    Jaro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaro-winkler" class="md-nav__link">
+    Jaro-Winkler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#soundex-approximation" class="md-nav__link">
     Soundex Approximation
   </a>
@@ -342,11 +356,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-result-combination" class="md-nav__link">
-    4.3 Result Combination
+  <a href="#43-results-combination" class="md-nav__link">
+    4.3 Results Combination
   </a>
   
-    <nav class="md-nav" aria-label="4.3 Result Combination">
+    <nav class="md-nav" aria-label="4.3 Results Combination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -548,6 +562,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jaro" class="md-nav__link">
+    Jaro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaro-winkler" class="md-nav__link">
+    Jaro-Winkler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#soundex-approximation" class="md-nav__link">
     Soundex Approximation
   </a>
@@ -595,11 +623,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-result-combination" class="md-nav__link">
-    4.3 Result Combination
+  <a href="#43-results-combination" class="md-nav__link">
+    4.3 Results Combination
   </a>
   
-    <nav class="md-nav" aria-label="4.3 Result Combination">
+    <nav class="md-nav" aria-label="4.3 Results Combination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -859,9 +887,82 @@ Other ways of using time delta are also possible. Because Time Delta has no dire
 
 </details>
 <p><br></p>
+<h3 id="jaro">Jaro<a class="headerlink" href="#jaro" title="Permanent link">&para;</a></h3>
+<p>This ​method is used to align ​​source a​nd ​​target’s IRIs whenever the similarity score of their respective user selected property values are ​​above a given threshold in the range ]0, 1]​.</p>
+<p><a href="https://rosettacode.org/wiki/Jaro_distance">Jaro distance</a> is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalised such that 0 equates to no similarity and 1 is an exact match.</p>
+<p>Given two strings <strong>s<sub>1</sub></strong> and <strong>s<sub>2</sub></strong>,</p>
+<ul>
+<li>
+<p>Find common characters x<sub>i</sub> and y<sub>j</sub> such that x<sub>i</sub> = y<sub>j</sub> where x<sub>i</sub> and y<sub>j</sub> are not more than <strong>d</strong> characters aways from each other and the acceptable matching distance <strong>d</strong> is half the longest input string (d = max( |s<sub>1</sub>|, |s<sub>2</sub>| ) / 2).</p>
+</li>
+<li>
+<p>Let <strong>m</strong> be number of common characters shared by s<sub>1</sub> and s<sub>2</sub>.</p>
+</li>
+<li>
+<p>From the resulting common characters in s<sub>1</sub> and s<sub>2</sub>, let <strong>t</strong> be the number of transposition which is the number of characters that do not share the same position.
+<!--* If **s** and **t** have no similar strength, return 0--> 
+<!--* else Apply the formula: 1/3 ( m / |s| + m / |t| + ( m- t/2 ))--></p>
+</li>
+<li>Compute the strength using the formula <blockquote>
+<p><sub><img alt="" src="../Images/Jaro.jpg" /></sub>
+<!--<span><span class="MathJax_Preview">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</span><script type="math/tex">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</script></span>, <span><span class="MathJax_Preview">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</span><script type="math/tex">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</script></span>.--></p>
+</blockquote>
+</li>
+</ul>
+<details class="example" open="open"><summary><strong>Example 8</strong></summary><div class="highlight"><pre><span></span><code>SOURCE                : |s| = |source| = 6
+TARGET                : |t| = |target| = 6
+MATCHING DISTANCE     : d = max(6, 6) = 3
+COMMON CHARACTERS     : m = |re| = |re| = 2
+TRANSPOSITIONS        : t = 0
+STRENGTH              : s = 1/3 * ( 2/6 + 2/6 + (2 - 0/2)/2) = 0.55556
+
+
+SOURCE                : |s| = |jono| = 4
+TARGET                : |t| = |ojhono| = 6
+MATCHING DISTANCE     : d = max(4, 6) = 3
+COMMON CHARACTERS     : m = |jono| = |ojon| = 4
+TRANSPOSITIONS        : t = 4
+STRENGTH              : s = 1/3 * ( 4/4 + 4/6 + (4 - 4/2)/4) = 0.72222
+
+
+SOURCE                : |s| = |DUANE| = 5
+TARGET                : |t| = |DWAYNE| = 6
+MATCHING DISTANCE     : d = max(5, 6) = 3
+COMMON CHARACTERS     : m = |DANE| = |DANE| = 4
+TRANSPOSITIONS        : t = 0
+STRENGTH              : s = 1/3 * ( 4/5 + 4/6 + (4 - 0/2)/4) = 0.82222
+
+
+SOURCE                : |s| = |DIXON| = 5
+TARGET                : |t| = |DICKSONX| = 8
+MATCHING DISTANCE     : d = max(5, 8) = 4
+COMMON CHARACTERS     : m = |DION| = |DION| = 4
+TRANSPOSITIONS        : t = 0
+STRENGTH              : s = 1/3 * ( 4/5 + 4/8 + (4 - 0/2)/4) = 0.76667
+
+
+SOURCE                : |s| = |JELLYFISH| = 9
+TARGET                : |t| = |SMELLYFISH| = 10
+MATCHING DISTANCE     : d = max(9, 10) = 5
+COMMON CHARACTERS     : m = |ELLYFISH| = |ELLYFISH| = 8
+TRANSPOSITIONS        : t = 0
+STRENGTH              : s = 1/3 * ( 8/9 + 8/10 + (8 - 0/2)/8) = 0.8963
+</code></pre></div>
+
+</details>
+<p><br></p>
+<h3 id="jaro-winkler">Jaro-Winkler<a class="headerlink" href="#jaro-winkler" title="Permanent link">&para;</a></h3>
+<p>Given two strings <strong>s<sub>1</sub></strong> and <strong>s<sub>2</sub></strong>, the Winkler similarity equation boosts up the Jaro algorithm&rsquo;s result <strong>d<sub>j</sub></strong> by increasing it whenever the compared strings share a prefix of a maximum of four characters. In this shared prefix scenario, the boost is computed as <strong>w<sub>b</sub> = P<sub>l</sub> * P<sub>w</sub> ( 1 - d<sub>j</sub> )</strong> where P<sub>l</sub> is the length of the set of shared prefix and P<sub>w</sub> is a user dependent scaling factor for how much the score is adjusted upwards for having common prefixes. Because four is the maximum number of shared prefix to consider, the user&rsquo;s choice of P<sub>w</sub> lies between 0 and &frac14;. Setting P<sub>w</sub> to &frac14; implies a similarity of always 1 whenever the strings share the maximum of 4 prefixes, no matter the real dissimilarity between the strings.</p>
+<p>The Jaro-Winkler is computed as: <em>jaro-winkler = d<sub>j</sub> + w<sub>b</sub></em></p>
+<details class="example" open="open"><summary><strong>Example 9: Jaro vs Jaro-Winkler</strong></summary><div class="highlight"><pre><span></span><code><span class="n">jaro</span><span class="p">(</span><span class="s2">&quot;alexander&quot;</span><span class="p">,</span> <span class="s2">&quot;alexandrine&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.90236</span>
+<span class="n">jaro_winkler</span><span class="p">(</span><span class="s2">&quot;alexander&quot;</span><span class="p">,</span> <span class="s2">&quot;alexandrine&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.94141</span>
+</code></pre></div>
+
+</details>
+<p><br></p>
 <h3 id="soundex-approximation">Soundex Approximation<a class="headerlink" href="#soundex-approximation" title="Permanent link">&para;</a></h3>
 <p>This option is performed in two phases. First, the string values of the user selected properties are normalised (converted to a soundex code). Then a user selected matcher (Levenshtein, Jaro, jaro-Winkler&hellip;) is run over the normalised string (Soundex code).</p>
-<details class="example" open="open"><summary><strong>Example 8</strong></summary><p>For example, given <code>ex:E1</code> and ex:E2, the matching strength using Edit Distance is 1 - &#8539; = 0.875. When directly performing an Edit distance match or a Soundex, we respectively get 0.625 and 0 as strengths.
+<details class="example" open="open"><summary><strong>Example 10</strong></summary><p>In the example below, given <code>ex:E1</code> and <code>ex:E2</code>, the matching strength using Edit Distance is 1 - &#8539; = 0.875. When directly performing an Edit distance match or a Soundex, we respectively get 0.625 and 0 as strengths.
 <div class="highlight"><pre><span></span><code><span class="c"># -------------------------------</span><span class="w"></span>
 <span class="c"># INPUT          SIZE 3   SIZE 4  </span><span class="w"></span>
 <span class="c"># -------------------------------</span><span class="w"></span>
@@ -880,7 +981,7 @@ Other ways of using time delta are also possible. Because Time Delta has no dire
 <p><br></p>
 <h3 id="approx-over-same-soundex">Approx over Same-Soundex<a class="headerlink" href="#approx-over-same-soundex" title="Permanent link">&para;</a></h3>
 <p>In the <strong>Lenticular Lens</strong>, Soundex can also be used as a first filtering step (string normalisation). This means that first we select all pairs sharing the same Soundex code. Then, for each of these pairs an extra string sequence matching algorithm such as (Levenshtein, Jaro, Jaro-Winkler&hellip;) is applied to the original pair of matched strings (not the Soundex codes) to determine the strength of the match in the interval ]0, 1].</p>
-<details class="example" open="open"><summary><strong>Example 9</strong>: Generating a linkset using the Soundex algorithm</summary><p>In the table below, the normalisation of both <code>Louijs Rocourt</code> and <code>`Lowis Ricourt</code> 
+<details class="example" open="open"><summary><strong>Example 11</strong>: Generating a linkset using the Soundex algorithm</summary><p>In the table below, the normalisation of both <code>Louijs Rocourt</code> and <code>`Lowis Ricourt</code> 
 becomes <code>L200 R263</code> leading to an edit distance of 0 and a relative strength of 1. However,
 computing the same names using directly an edit distance results in an edit distance of 3 
 and a relative matching strength of 0.79.
@@ -903,7 +1004,7 @@ and a relative matching strength of 0.79.
 <h3 id="bloothooft">Bloothooft<a class="headerlink" href="#bloothooft" title="Permanent link">&para;</a></h3>
 <p>This approximation method is specifically tailored for accessing the similarity between a pair of  IRIs for which the user selected property values are Dutch names. The algorithm basically normalises the given names by removing or replacing specific characters…. 
 The resulting normalised names are then pairwise compared using the Approximated Levenshtein Distance (see the description of Approximated Levenshtein Distance).</p>
-<details class="example" open="open"><summary><strong>Example 10</strong>: </summary><div class="highlight"><pre><span></span><code>
+<details class="example" open="open"><summary><strong>Example 12</strong>: </summary><div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 </details>
@@ -918,7 +1019,7 @@ The resulting normalised names are then pairwise compared using the Approximated
 <li>A threshold on the number of words not approximated/identical.</li>
 <li>An overall  threshold for accepting or rejecting a match.</li>
 </ul>
-<details class="example" open="open"><summary><strong>Example 11</strong>: Expectation</summary><p>For example, it can be used for aligning 
+<details class="example" open="open"><summary><strong>Example 13</strong>: Expectation</summary><p>For example, it can be used for aligning 
  - [Rembrand van Rijn] and [van Rijn Rembrandt]
  - [Herdoopers anslagh op Amsterdam] and [Herdoopers anslagh op Amsterdam. 
     Den x. may: 1535. Treur-spel.] regardless of the words&rsquo; order.</p>
@@ -971,11 +1072,11 @@ is the only intersection found in MODE-2 and thereby bringing the similarity str
 <p><br></p>
 <h3 id="list-intersection">List Intersection<a class="headerlink" href="#list-intersection" title="Permanent link">&para;</a></h3>
 <p>This method is better suited for matching events. It helps establishing a relationship between the source and target entities whenever a list of entities from the source dataset intersects another list of entities stemmed from the target dataset. </p>
-<p>For illustration, suppose that we have the two events in Example 9. (1) Event one, defined by the source event-entities, documents event-entities that lists entities representing persons about to get married. This event is the <code>Intended-Marriage</code> event. (2) Event two is the <code>Marriage</code> event. It lists (i) entities representing persons that got married and (ii) the guests who attended the event. <br>
+<p>For illustration, suppose that we have the two events in Example 14. (1) Event one, defined by the source event-entities, documents event-entities that lists entities representing persons about to get married. This event is the <code>Intended-Marriage</code> event. (2) Event two is the <code>Marriage</code> event. It lists (i) entities representing persons that got married and (ii) the guests who attended the event. <br>
 Now that the two events are defined, let us imagine that we would like to find out which of the <code>Intended-Marriage</code> couple fulfilled its will to get married. For this to be true, we assume that a couple with the wish to be wed should end-up being present at a <code>Marriage</code> event, hopefully their own marriage. This means that, for a match to occur, a <strong>minimum of two elements from a list from the source</strong> must also belong to a list from the target. In other words, a match is to be generated whenever 100% (all) of the elements in a source&rsquo;s lists intersects a target&rsquo;s list. </p>
 <p>In this method, two thresholds are to be defined. The first threshold or <strong>similarity-threshold</strong> imposes a minimum accepted similarity score (generally in ]0, 1]) when elements stemmed from different lists are compared. Passing this threshold is interpreted as the occurrence of an intersection between elements of two lists. The second threshold, the <strong>intersection-threshold</strong> expressed in quantity or percentage, denotes the minimum number of intersections that must occur for a link to be created. <br>
-In practice, looking at Example 9, only events <code>ex: intended-1</code> and <code>ex:married-2</code> are a match as the pairs (<code>Catharina Reminck</code> , <code>Catharina Remink</code>) and (<code>Mr. Jean de Melie</code>, <code>Jean de Melie</code>) are respectively similar with a score of 0.94 and 0.82. aaaa</p>
-<details class="example" open="open"><summary><strong>Example 10</strong>: List Intersection</summary><p>A source dataset documenting events as lists of couple with the intention of getting married and a 
+In practice, looking at Example 14, only events <code>ex: intended-1</code> and <code>ex:married-2</code> are a match as the pairs (<code>Catharina Reminck</code> , <code>Catharina Remink</code>) and (<code>Mr. Jean de Melie</code>, <code>Jean de Melie</code>) are respectively similar with a score of 0.94 and 0.82. aaaa</p>
+<details class="example" open="open"><summary><strong>Example 14</strong>: List Intersection</summary><p>A source dataset documenting events as lists of couple with the intention of getting married and a 
 target dataset with list of people at a wedding ceremony. Each of these latter lists is expected to
 includes the wed couple.</p>
 <div class="highlight"><pre><span></span><code><span class="err">------------------------------------------------------------------------</span><span class="w"></span>
@@ -1013,12 +1114,9 @@ includes the wed couple.</p>
 <p>The Amsterdam&rsquo;s city archives (SAA) possesses physical handwritten inventories records where a record may be for example an inventory of goods (paintings, prints, sculpture, furniture, porcelain, etc.) owned by an Amsterdamer and mentioned in a last will. Interested in documenting the ownership of paintings from the 17<sup>th</sup> century, the Yale University Professor John Michael Montias compiled a database by transcribing 1280 physical handwritten inventories (scattered in the Netherlands) of goods. Now that a number of these physical inventories have been digitised using handwriting recognition, one of the goals of the Golden Agent project is to identify Montias&rsquo; transcriptions of painting selections within the digitised inventories. This problem can be generically reformulated as, given a <span style="color:blue"><em>source-segment database (e.g. Montias DB)</em></span> and a <span style="color:blue"><em>target-segment database (e.g. SAA)</em></span>, <em>find the best similar target segment  for each source segment</em>. </p>
 <p><div align="center"> <img alt="Inventory" src="../Images/Inventory.jpg" /> Fig 4.9: Digitisation of inventory documents available at the Amsterdam&rsquo;s city archives. </div> 
 <br></p>
-<details class="example" open="open"><summary><strong>Example 12</strong>: </summary><div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-</details>
+<details class="info" open="open"><summary><strong>Check <a href="https://team-algo.github.io">TeAM</a> for a more detailed explanation.</strong> </summary></details>
 <p><br></p>
-<h2 id="43-result-combination">4.3 Result Combination<a class="headerlink" href="#43-result-combination" title="Permanent link">&para;</a></h2>
+<h2 id="43-results-combination">4.3 Results Combination<a class="headerlink" href="#43-results-combination" title="Permanent link">&para;</a></h2>
 <p>This section addresses <strong>Complex Methods</strong> as ways to combine matching methods, not to be confused with the complexity of the underlying the methods. 
 All of the matching methods described earlier generate links with matching strength scores in the interval ]0, 1]. 
 We saw for example that the relative strength score between ​<code>Rembrand van Rijn</code> and <code>Rembrandt Harmensz van Rijn</code> is 0.63 using the Levenshtein algorithm and 0.74 using Soundex. 
@@ -1032,7 +1130,7 @@ Here we discuss the rationals used in the <strong>Lenticular lens</strong> to su
 <p>The two standard logic operators traditionally used are <strong>Conjunction (AND)</strong> and <strong>Disjunction (OR)</strong>. 
 The first takes the minimum strength and the latter takes the maximum strength. This applies for both <strong>classic values</strong> (True -1- or False -0-) and <strong>fuzzy values</strong> ( between 0 and 1 ). </p>
 <p>Since the results from matching methods are <strong>fuzzy values</strong> in the interval ]0,1], the table bellow illustrates the default behaviour of the Lenticular Lens when combining them.</p>
-<details class="example"><summary>Standard logic operations over conjunction (min) and disjunction (max)</summary><div class="highlight"><pre><span></span><code>Source                      Target                       Levenshtein  Soundex      OR(max)    AND(min)
+<details class="example" open="open"><summary>Standard logic operations over conjunction (min) and disjunction (max)</summary><div class="highlight"><pre><span></span><code>Source                      Target                       Levenshtein  Soundex      OR(max)    AND(min)
 ------------------------------------------------------------------------------------------------------
 Jasper Cornelisz. Lodder    Jaspar Cornelisz Lodder             0.92     1.00        1.00         0.92
 Rembrand van Rijn           Rembrandt Harmensz van Rijn         0.63     0.74        0.74         0.63
