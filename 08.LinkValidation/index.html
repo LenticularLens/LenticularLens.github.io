@@ -554,35 +554,42 @@
                 
                 
                 <h1 id="8-link-validation">8. LINK VALIDATION <img alt="🔍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f50d.svg" title=":mag:" /><a class="headerlink" href="#8-link-validation" title="Permanent link">&para;</a></h1>
-<p>Imagine a researcher in the need of integrating data on publications, authors and education institutions. Wrongly executing this integration task could mean, for example, assigning the h-index of author A to author B or wrongly saying that author A is affiliated to an institution he has never been involved with. Hardly any matching algorithm returns only perfect results. In light of this, to reach a solid investigation result, it is of importance to support human validation once links have been created and optionaly improved.</p>
+<p>Imagine a researcher in the need of integrating data on publications, authors and education institutions. Wrongly executing this integration task could mean, for example, assigning the h-index of author A to author B or wrongly saying that author A is affiliated to an institution he has never been involved with. Hardly any matching algorithm returns only perfect results. In light of this, to reach a solid investigation result, it is of importance to support human validation once links have been created and optionally improved.</p>
 <h2 id="71-validation-and-links-context">7.1 Validation and Links&rsquo; Context<a class="headerlink" href="#71-validation-and-links-context" title="Permanent link">&para;</a></h2>
+<ul>
+<li><span class="inline">intrinsic properties</span> </li>
+<li>the <span class="inline">purpose</span> or <span class="inline">task</span> for which the links are used.</li>
+</ul>
 <h2 id="72-voting-strategies">7.2 Voting Strategies<a class="headerlink" href="#72-voting-strategies" title="Permanent link">&para;</a></h2>
-<p>In the Semantic Web, the standard semantic interpretation of identity entails full equality between two resources. Such semantic applies independently of context even though in real life problems, the equality between resources may depend (i) not only on their intrinsic properties (ii) but also on the purpose or task for which they are used. In the latter scenario, for the same identity link, multiple <span class="inline">&ldquo;truths&rdquo;</span> (multiple possible interpretations) can co-exist once we accept the contexts in which these <span class="inline">&ldquo;truths&rdquo;</span> have been cast. As a result, the <strong>Lenticular Lens</strong> tool allows for a <em>single link</em> to be validated countless times, and by continuity, it allows for a collection of links (linkset or lens) to have various validations. This brings us to what we denote as <strong>Voting</strong> which is the merging of <strong>Validations</strong> sharing the same context.</p>
-<p>The <strong>Lenticular Lens</strong> tool provides four ways for merging validations. These include: <span class="inline">Accepted Once</span>,  <span class="inline">Rejected Once</span>,  <span class="inline">Majority</span> and <span class="inline">Disputed</span>. In the next section, we discuss the aforementioned options.</p>
+<p>In the Semantic Web, the standard semantic <a href="../02.Terminology/#owldl">OWL/DL</a> interpretation of identity  between two resources entails full equality , i.e. they are necessarily the same and share all their properties. Such semantic applies independently of context and therefore no validation or dispute apply since that semantic does not take any of it into account: things are either the same or they are not. [<a href="../12.References/#Idrissou2017">Idrissou 2017</a>]</p>
+<p>In real life problems, the equality between resources may depend (i) not only on their <span class="inline">intrinsic properties</span> (ii) but also on the <span class="inline">purpose</span> or <span class="inline">task</span> for which they are used. For example, an organisation A and B are the same in context 1 but not not the same in context 2.</p>
+<p>Instead of the rigid <span class="inline">owl:sameAs</span> standard semantics, if an alternative semantics is considered where <span class="inline">context</span> is taken into account, then things can be the same or not depending on the context that applies. Moreover, within a <span class="inline">common context</span> there can still be divergences when, for example, there is not enough information for reaching a correct (indisputable) outcome. In other words, for the same identity link, multiple <span class="inline">&ldquo;truths&rdquo;</span> (multiple possible interpretations) can co-exist once we agree on the context in which these <span class="inline">&ldquo;truths&rdquo;</span> are cast. </p>
+<p>As a result, the <strong>Lenticular Lens</strong> tool allows for a <em>single link</em> to be both (i) established within a context and (ii) validated countless times, and then, by continuity, it allows for a collection of links (linkset or lens) to have various validations by different users. Even thought this is a desirable feature, before using the links for integration one needs to make a decision about their validity. This brings us to what we denote as <strong>Voting</strong> which is the merging of <strong>Validations</strong> sharing the same context.</p>
+<p>The <strong>Lenticular Lens</strong> tool provides five ways for merging validations. These include: <span class="inline">Accepted Once</span>, <span class="inline">Rejected Once</span>,  <span class="inline">Majority</span>, <span class="inline">Disputed</span>, <span class="inline">Weighted Experts.</span> and <span class="inline">Highest Ranking Experts</span>. In the next section, we discuss the aforementioned options.</p>
 <h3 id="721-consistent-validations">7.2.1 Consistent Validations<a class="headerlink" href="#721-consistent-validations" title="Permanent link">&para;</a></h3>
-<p>This is the best world situation. A link has been validated several times with the same outcome, meaning not once a contradiction occurred. The validation is consistent and therefore reminded as is.</p>
+<p>This is the best scenario. A link has been validated several times with the same outcome, meaning not once a contradiction has occurred. The validation is consistent and therefore remains as it is.</p>
 <h3 id="721-disputed-validations">7.2.1 Disputed Validations<a class="headerlink" href="#721-disputed-validations" title="Permanent link">&para;</a></h3>
-<p>Disputes occur when a link has been inconsistently validated several times. This means for example that it has been <span class="inline">ACCEPTED</span> three time but <span class="inline">REJECTED</span> twice. In this scenario, we follow a simple protocol:</p>
+<p>Disputes occur when a link has been validated several times but with contradicting truth statements (inconsistently). For example, when a links has been <span class="inline">ACCEPTED</span> three times but <span class="inline">REJECTED</span> twice. In this scenario, we follow a simple protocol:</p>
 <ul>
 <li>
-<p>In the event that a link has been validated several times with contradicting truth statements, flag the link as <span class="inline">DISPUTED</span>.</p>
+<p>The link with contradicting validations is flagged as <span class="inline">DISPUTED</span>.</p>
 </li>
 <li>
-<p>In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
-</li>
-<li>
-<p>In the event that <strong>no tie</strong> occurs, one has the following options for reaching an agreement:</p>
+<p>The following options can be chosen for reaching an agreement:</p>
 <blockquote>
 <p><span class="inline"><strong>Accepted Once.</strong></span>
  Consider the link as <span class="inline">ACCEPTED</span> if it has been accepted at least once.</p>
 <p><span class="inline"><strong>Rejected Once.</strong></span>
 Consider the link as <span class="inline">REJECTED</span> if it has been rejected at least once.</p>
 <p><span class="inline"><strong>Majority.</strong></span>
-Consider the link as <span class="inline">ACCEPTED</span> if  it has been accepted more times than being rejected, otherwise consider the link as <span class="inline">REJECTED</span>. In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
-<p><span class="inline"><strong>Highest Ranking Expertise.</strong></span>
-Deciding on how to merge several validations on the basis of the authority with the highest rank is also possible. The decision to accept or reject the link is solely made by the highest ranking expert. It is easy to see here that an even number of experts with the same rank leads to a tie. In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span>. </p>
-<p><span class="inline"><strong>Weighted Expert.</strong></span> In this situation, a weighted sum is performed within each voting group (<span class="inline">ACCEPTED vs REJECTED</span>). The group with the highest weighted sum gets to cast its vote. However, in the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span>. </p>
+Consider the link as <span class="inline">ACCEPTED</span> if  it has been accepted more times than being rejected, otherwise consider the link as <span class="inline">REJECTED</span>. <!--In the even of a **tie**, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.--></p>
+<p><span class="inline"><strong>Weighted Experts.</strong></span> In this situation, a weighted sum is performed within each voting group (<span class="inline">ACCEPTED vs REJECTED</span>). The group with the highest weighted sum gets to cast its vote. <!--However, in the even of a **tie**, the link is considered <span class="inline">REJECTED</span>.--> </p>
+<p><span class="inline"><strong>Highest Ranking Experts.</strong></span>
+Deciding on how to merge several validations on the basis of the authority with the highest rank is also possible. The decision to accept or reject the link is solely made by the highest ranking expert. It is easy to see here that there can be still disputes among highest ranked experts. In this case, the majority among experts applies.</p>
 </blockquote>
+</li>
+<li>
+<p>No matter the option, in the event of a <strong>tie</strong>, the link is <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
 </li>
 </ul>
 <h2 id="73-validation-support">7.3 Validation Support<a class="headerlink" href="#73-validation-support" title="Permanent link">&para;</a></h2>
