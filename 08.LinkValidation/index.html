@@ -356,36 +356,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#731-accepted-once" class="md-nav__link">
-    7.3.1 Accepted Once
+  <a href="#741-consistent-validations" class="md-nav__link">
+    7.4.1 Consistent Validations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#732-rejected-once" class="md-nav__link">
-    7.3.2 Rejected Once
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#733-majority" class="md-nav__link">
-    7.3.3 Majority
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#734-expertise" class="md-nav__link">
-    7.3.4 Expertise
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#734-disputed" class="md-nav__link">
-    7.3.4 Disputed
+  <a href="#741-disputed-validations" class="md-nav__link">
+    7.4.1 Disputed Validations
   </a>
   
 </li>
@@ -557,36 +536,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#731-accepted-once" class="md-nav__link">
-    7.3.1 Accepted Once
+  <a href="#741-consistent-validations" class="md-nav__link">
+    7.4.1 Consistent Validations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#732-rejected-once" class="md-nav__link">
-    7.3.2 Rejected Once
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#733-majority" class="md-nav__link">
-    7.3.3 Majority
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#734-expertise" class="md-nav__link">
-    7.3.4 Expertise
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#734-disputed" class="md-nav__link">
-    7.3.4 Disputed
+  <a href="#741-disputed-validations" class="md-nav__link">
+    7.4.1 Disputed Validations
   </a>
   
 </li>
@@ -623,16 +581,32 @@
 <h2 id="74-voting-strategies">7.4 Voting Strategies<a class="headerlink" href="#74-voting-strategies" title="Permanent link">&para;</a></h2>
 <p>In the Semantic Web, the standard semantic interpretation of identity entails full equality between two resources. Such semantic applies independently of context even though in real life problems, the equality between resources may depend (i) not only on their intrinsic properties (ii) but also on the purpose or task for which they are used. In the latter scenario, for the same identity link, multiple <span class="inline">&ldquo;truths&rdquo;</span> (multiple possible interpretations) can co-exist once we accept the contexts in which these <span class="inline">&ldquo;truths&rdquo;</span> have been cast. As a result, the <strong>Lenticular Lens</strong> tool allows for a <em>single link</em> to be validated countless times, and by continuity, it allows for a collection of links (linkset or lens) to have various validations. This brings us to what we denote as <strong>Voting</strong> which is the merging of <strong>Validations</strong> sharing the same context.</p>
 <p>The <strong>Lenticular Lens</strong> tool provides four ways for merging validations. These include: <span class="inline">Accepted Once</span>,  <span class="inline">Rejected Once</span>,  <span class="inline">Majority</span> and <span class="inline">Disputed</span>. In the next section, we discuss the aforementioned options.</p>
-<h3 id="731-accepted-once">7.3.1 Accepted Once<a class="headerlink" href="#731-accepted-once" title="Permanent link">&para;</a></h3>
-<p>In the event that a link has been validated several times with contradicting truth statements, consider the link as <span class="inline">ACCEPTED</span> if it has been accepted at least once.</p>
-<h3 id="732-rejected-once">7.3.2 Rejected Once<a class="headerlink" href="#732-rejected-once" title="Permanent link">&para;</a></h3>
-<p>In the event that a link has been validated several times with contradicting truth statements, consider the link as <span class="inline">REJECTED</span> if it has been accepted at least once.</p>
-<h3 id="733-majority">7.3.3 Majority<a class="headerlink" href="#733-majority" title="Permanent link">&para;</a></h3>
-<p>In the event that a link has been validated several times with contradicting truth statements,  consider the link as <span class="inline">ACCEPTED</span> if  it has been ACCEPTED more times than REJECTED otherwise, consider the link as <span class="inline">REJECTED</span>. In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
-<h3 id="734-expertise">7.3.4 Expertise<a class="headerlink" href="#734-expertise" title="Permanent link">&para;</a></h3>
-<p>Deciding on how to merge validations on the basis of what has the higher </p>
-<h3 id="734-disputed">7.3.4 Disputed<a class="headerlink" href="#734-disputed" title="Permanent link">&para;</a></h3>
+<h3 id="741-consistent-validations">7.4.1 Consistent Validations<a class="headerlink" href="#741-consistent-validations" title="Permanent link">&para;</a></h3>
+<p>This is the best world situation. A link has been validated several times with the same outcome, meaning not once a contradiction occurred. The validation is consistent and therefore reminded as is.</p>
+<h3 id="741-disputed-validations">7.4.1 Disputed Validations<a class="headerlink" href="#741-disputed-validations" title="Permanent link">&para;</a></h3>
+<p>Disputes occur when a link has been inconsistently validated several times. This means for example that it has been <span class="inline">ACCEPTED</span> three time but <span class="inline">REJECTED</span> twice. In this scenario, we follow a simple protocol:</p>
+<ul>
+<li>
 <p>In the event that a link has been validated several times with contradicting truth statements, flag the link as <span class="inline">DISPUTED</span>.</p>
+</li>
+<li>
+<p>In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
+</li>
+<li>
+<p>In the event that <strong>no tie</strong> occurs, one has the following options for reaching an agreement:</p>
+<blockquote>
+<p><span class="inline"><strong>Accepted Once.</strong></span>
+ Consider the link as <span class="inline">ACCEPTED</span> if it has been accepted at least once.</p>
+<p><span class="inline"><strong>Rejected Once.</strong></span>
+Consider the link as <span class="inline">REJECTED</span> if it has been rejected at least once.</p>
+<p><span class="inline"><strong>Majority.</strong></span>
+Consider the link as <span class="inline">ACCEPTED</span> if  it has been accepted more times than being rejected, otherwise consider the link as <span class="inline">REJECTED</span>. In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span> unless stated otherwise by the user.</p>
+<p><span class="inline"><strong>Highest Ranking Expertise.</strong></span>
+Deciding on how to merge several validations on the basis of the authority with the highest rank is also possible. The decision to accept or reject the link is solely made by the highest ranking expert. It is easy to see here that an even number of experts with the same rank leads to a tie. In the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span>. </p>
+<p><span class="inline"><strong>Weighted Expert.</strong></span> In this situation, a weighted sum is performed within each voting group (<span class="inline">ACCEPTED vs REJECTED</span>). The group with the highest weighted sum gets to cast its vote. However, in the even of a <strong>tie</strong>, the link is considered <span class="inline">REJECTED</span>. </p>
+</blockquote>
+</li>
+</ul>
                 
               
               
