@@ -258,6 +258,26 @@
     3.2 OWL Ontology
   </a>
   
+    <nav class="md-nav" aria-label="3.2 OWL Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-classes" class="md-nav__link">
+    3.2.1 Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-properties" class="md-nav__link">
+    3.2.2 Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -273,8 +293,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04.Algorithms/" title="4. Algorithms" class="md-nav__link">
-      4. Algorithms
+    <a href="../04.Algorithms/" title="4. Matching Algorithms" class="md-nav__link">
+      4. Matching Algorithms
     </a>
   </li>
 
@@ -309,8 +329,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../08.LinkExport/" title="7. Link Export" class="md-nav__link">
-      7. Link Export
+    <a href="../07.LinkVisualisation/" title="7. Visualising Identity Network" class="md-nav__link">
+      7. Visualising Identity Network
     </a>
   </li>
 
@@ -321,8 +341,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.DataIntegration/" title="8. Data Integration" class="md-nav__link">
-      8. Data Integration
+    <a href="../08.LinkValidation/" title="8. Link Validation" class="md-nav__link">
+      8. Link Validation
     </a>
   </li>
 
@@ -333,8 +353,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10.Installation/" title="9. Using Lenticular Lens" class="md-nav__link">
-      9. Using Lenticular Lens
+    <a href="../09.LinkExport/" title="9. Link Export" class="md-nav__link">
+      9. Link Export
     </a>
   </li>
 
@@ -345,8 +365,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.References/" title="10. References" class="md-nav__link">
-      10. References
+    <a href="../10.DataIntegration/" title="10. Data Integration" class="md-nav__link">
+      10. Data Integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../11.Installation/" title="11. Using Lenticular Lens" class="md-nav__link">
+      11. Using Lenticular Lens
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../12.References/" title="12. References" class="md-nav__link">
+      12. References
     </a>
   </li>
 
@@ -420,6 +464,26 @@
     3.2 OWL Ontology
   </a>
   
+    <nav class="md-nav" aria-label="3.2 OWL Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-classes" class="md-nav__link">
+    3.2.1 Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-properties" class="md-nav__link">
+    3.2.2 Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -435,82 +499,118 @@
               
                 
                 
-                <h1 id="3-ontology">3. ONTOLOGY<a class="headerlink" href="#3-ontology" title="Permanent link">&para;</a></h1>
-<p>This section presents an Ontology meant for describing in detail processes of generation and validation of links, so that decisions made such as resource selections and matching options are made explicit. Those processes are implemented in the Lenticular Lens tool and result in the creation of <strong>Linksets</strong> or <strong>Lenses</strong> according to a specification. </p>
+                <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous" />
+
+<style type="text/css">
+    .katex img {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: inherit;
+    }
+</style>
+<h1 id="3-ontology">3. ONTOLOGY <img alt="🖍️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f58d.svg" title=":crayon:" /><a class="headerlink" href="#3-ontology" title="Permanent link">&para;</a></h1>
+<p>This section presents an Ontology meant for describing in detail processes of generation and validation of links, so that decisions made such as resource selections and matching options are made explicit. Those processes are implemented in the <strong>Lenticular Lens</strong> tool and result in the creation of <strong>Linksets</strong> or <strong>Lenses</strong> according to a specification. </p>
 <h2 id="31-model">3.1 Model<a class="headerlink" href="#31-model" title="Permanent link">&para;</a></h2>
-<p>The proposed ontology reuses (part of) the VoID vocabulary, as depicted in Fig 2.1 highlighting in yellow the use of VoID terms and in blue the new terminology. The VoID vocabulary provides means to describe datasets and linksets, but not the details of how they were generated, nor it provides means to describe Lenses or Validations. Moreover, their concept of linkset is not quite the same as ours. Those issues are further discussed in this section.</p>
-<p>In the attempt to describe the proposed ontology, we dissect Fig 2.1 into four parts. First, a <code>Resource Selection</code> is elucidated. Second, we go about describing a <code>Matching Formulation</code> and show how it connects with a <code>Resource Selection</code>. The third step highlights that the description of a <code>Linkset</code> metadata involves specifying the <code>Resource Selections</code> used at the source and target positions of an entity matching process, the <code>Matching Formulation</code>, eventual validations plus statistics and authority information. The fourth and final step focuses on the annotation of a <code>Lens</code> by describing the combination of one or more Linksets and/or Lenses. 
- <div align="center"><br><img alt="Ontology" src="../Images/Ontology.jpg" /> <br>Fig 2.1: The Lenticular Lens Ontology</div>
-<br></p>
+<p>The proposed ontology reuses (part of) the [<a href="../12.References/#VoID">VoID</a>] vocabulary, as depicted in Fig 2.1 highlighting in yellow the use of [<a href="../12.References/#VoID">VoID</a>] terms and in blue the new terminology. The [<a href="../12.References/#VoID">VoID</a>] vocabulary provides means to describe datasets and linksets, but not the details of how they were generated, nor it provides means to describe Lenses or Validations. Moreover, their concept of linkset is not quite the same as ours. Those issues are further discussed in this section.</p>
+<p>In the attempt to describe the proposed ontology, we dissect Fig 2.1 into four parts. </p>
+<ul>
+<li>First, a <span class="inline">Resource Selection</span> is elucidated. </li>
+<li>Second, we go about describing a <span class="inline"> Matching Formulation</span> and show how it connects with a <span class="inline">Resource Selection</span>. </li>
+<li>The third step highlights that the description of a <span class="inline">Linkset</span> metadata involves specifying the <span class="inline">Resource Selections</span> used at the source and target positions of an entity matching process, the <span class="inline">Matching Formulation</span>, eventual validations plus statistics and authority information. </li>
+<li>The fourth and final step focuses on the annotation of a <span class="inline">Lens</span> by describing the combination of one or more Linksets and/or Lenses. 
+ <div align="center"><br><img alt="Ontology" src="../Images/Ontology.jpg" /> <br>Fig 1: The Lenticular Lens Ontology</div>
+<br></li>
+</ul>
 <h3 id="311-resource-selection">3.1.1 Resource Selection<a class="headerlink" href="#311-resource-selection" title="Permanent link">&para;</a></h3>
-<p>This step concerns the <strong>selection of the resources under scrutiny</strong>, that can potentially end up co-referent entities across or within datasources during an entity matching process. To therefore perform a matching, one first needs not only to select datasource(s) but also restrict which resources will undergo the matching. The first way of doing so is by applying a type (class) restriction. This is mandatory in the Lenticular Lens process as matching algorithms are not fully automated. Down this line, further restrictions can be applied by forcing the value of a number of properties to lie within a certain range. A <code>Resource Selection</code> is thereby, the annotation of such process.</p>
-<p>In the ontology excerpt depicted in Figure 2.2 we propose the entity type <code>Resource Selection</code>, which is also a <code>void:Dataset</code> that is a <code>void:subset</code> of one or more <code>void:Dataset(s)</code>. It can also have further restrictions defined as <code>void:classPartion</code> and/or <code>void:propertyPartition</code>. While a <code>void:classPartion</code> solely consists in specifying the <strong>type of entity</strong> under scrutiny, the <code>void:propertyPartition</code> entails a little more. It consists in specifying a <strong>property</strong> or <strong>property path</strong> and the <strong>restriction</strong> that the selected property should undergo for the selection of the right entities for the further down the road entity matching process. Those restriction can be combined using a <code>Formula Description</code> given by <code>ll:hasFormulaDescription</code>.
- <div align="center"><br><img alt="EntitySelection" src="../Images/Ont-EntitySelection.jpg" />  Fig 2.2: Selecting a matching resource </div></p>
-<details class="example" open="open"><summary><strong>Example 1</strong>: Resource Selection</summary><p>In this example, the entity <code>resource:ResourceSelection-2</code> is a <code>ll:ResourceSelection</code> (and <code>void:Dataset</code>) subset of <code>resource:index_op_doopregister_raw_20190830</code> and also a collection (partition) of entities of type <code>pnv:PersonName</code> where each entity passed the filter test of (1) name in the English language which appears without trailing dots <code>"%...%"@en</code> and (2) birthdates within the interval [1600, 1699]. Finally, <code>resource:ResourceSelection-2</code> lists all entities of type <code>ll:PropertyConstraint</code> (<code>resource:PropertyConstraint-PHea6802ef02f99a848859</code>, <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> and <code>resource:PropertyConstraint-PH2580641bbdd572759cb9</code>) and elaborates on the logic expression that binds all restrictions. For example, the property restriction described by <code>resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</code> documents that, applying the function <code>"minimal_date"@en</code> over dates in the format  <code>"YYYY-MM-DD"@en</code> with the year restriction of 1600 makes sure that only persons born on 1600 onwards are admitted.
+<p>This step concerns the <strong>selection of the resources under scrutiny</strong>, that can potentially end up co-referent entities across or within datasources during an entity matching process. To therefore perform a matching, one first needs not only to select datasource(s) but also restrict which resources will undergo the matching. The first way of doing so is by applying a type (class) restriction. This is mandatory in the Lenticular Lens process as matching algorithms are not fully automated. Down this line, further restrictions can be applied by forcing the value of a number of properties to lie within a certain range. A <span class="inline">Resource Selection</span> is thereby, the annotation of such process.</p>
+<p>In the ontology excerpt depicted in Figure 2 we propose the entity type <span class="inline">Resource Selection</span>, which is also a <span class="inline">void:Dataset</span> that is a <span class="inline">void:subset</span> of one or more <span class="inline">void:Dataset(s)</span>. It can also have further restrictions defined as <span class="inline">void:classPartion</span> and/or <span class="inline">void:propertyPartition</span>. While a <span class="inline">void:classPartion</span> solely consists in specifying the <strong>type of entity</strong> under scrutiny, the <span class="inline">void:propertyPartition</span> entails a little more. It consists in specifying a <strong>property</strong> or <strong>property path</strong> and a <strong>restriction</strong> that the selected property should undergo for the selection of the right entities for the further down the road entity matching process. Those restrictions can be combined using a <span class="inline">Formula Description</span> given by <span class="inline">ll:hasFormulaDescription</span>.
+ <div align="center"><br><img alt="EntitySelection" src="../Images/Ont-EntitySelection.jpg" />  Fig 2: Selecting a matching resource </div></p>
+<details class="example" open="open"><summary><strong>Example 1</strong>: Resource Selection</summary><p>In this example, </p>
+<ul>
+<li>the entity <span class="inline">resource:ResourceSelection-2</span> is a <span class="inline">ll:ResourceSelection</span> (and a <span class="inline">void:Dataset</span>) subset of <span class="inline">resource:index_op_doopregister_raw_20190830</span> and also a collection (partition) of entities of type <span class="inline">pnv:PersonName</span> where each entity passed the filter test of (1) <em>name in the English language which appears without trailing dots</em> <code>"%...%"@en</code> and (2) <em>birthdates within the interval [1600, 1699]</em>. </li>
+<li>the entity <span class="inline">resource:ResourceSelection-2</span> lists all three entities of type <span class="inline">ll:PropertyConstraint</span> <!--(<span class="inline">resource:PropertyConstraint-PHea6802ef02f99a848859</span>, <span class="inline">resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</span> and <span class="inline">resource:PropertyConstraint-PH2580641bbdd572759cb9</span>)--> and elaborates on the logic expression that binds all restrictions. For example, the property restriction described by <span class="inline">resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</span> documents that, applying the date function <code>"minimal_date"@en</code> over dates in the format the <code>"YYYY-MM-DD"@en</code> with the year restriction of 1600 makes sure that only persons born on 1600 onwards are admitted.</li>
+</ul>
+<details class="warning"><summary>Turtle Syntax</summary><p>When ever a literal in RDF syntax conatins quote or new line characters, the litreal
+should be in a three quote syntax (<code>"...""@en</code>). In the example below, we deliberately
+wrote the literal value of <span class="inline">ll:hasFormulaDescription</span> is in 
+a single quote (<code>"...""@en</code>) instead of a triple quote (<code>"""%...%="""@en</code>) as the syntax
+highliter is somewhat buggy.</p>
+</details>
 <div class="highlight"><pre><span></span><code><span class="c">### RESOURCE 2</span><span class="w"></span>
 <span class="nn">resource:</span><span class="nt">ResourceSelection-2</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">a</span><span class="w">                                        </span><span class="nn">void:</span><span class="nt">dataset</span><span class="p">,</span><span class="w"> </span><span class="nn">ll:</span><span class="nt">ResourceSelection</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">                               </span><span class="s">&quot;Baptisms in the 17th Century&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">void:</span><span class="nt">subset</span><span class="w">                              </span><span class="nn">resource:</span><span class="nt">index_op_doopregister_raw_20190830</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">void:</span><span class="nt">classPartition</span><span class="w">                      </span><span class="p">[</span><span class="w"> </span><span class="nn">void:</span><span class="nt">class</span><span class="w"> </span><span class="nn">pnv:</span><span class="nt">PersonName</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                </span><span class="nn">void:</span><span class="nt">dataset</span><span class="p">,</span><span class="w"> </span><span class="nn">ll:</span><span class="nt">ResourceSelection</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">                       </span><span class="s">&quot;Baptisms in the 17th Century&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">subset</span><span class="w">                      </span><span class="nn">resource:</span><span class="nt">index_op_doopregister_raw_20190830</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">classPartition</span><span class="w">              </span><span class="p">[</span><span class="w"> </span><span class="nn">void:</span><span class="nt">class</span><span class="w"> </span><span class="nn">pnv:</span><span class="nt">PersonName</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">                   </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHea6802ef02f99a848859</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">                   </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHce78383e3ff6e9dd73b6</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">                   </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PH2580641bbdd572759cb9</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">           </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHea6802ef02f99a848859</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">           </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHce78383e3ff6e9dd73b6</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">propertyPartition</span><span class="w">           </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PH2580641bbdd572759cb9</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormulaDescription</span><span class="w">                 </span><span class="s">&quot;&quot;&quot;</span>
-<span class="s">        resource:PropertyConstraint-PHce78383e3ff6e9dd73b6 </span>
-<span class="s">        AND resource:PropertyConstraint-PH2580641bbdd572759cb9  </span>
-<span class="s">        AND  (resource:PropertyConstraint-PHea6802ef02f99a848859)&quot;&quot;&quot;@en .</span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormulaDescription</span><span class="w">                 </span><span class="s">&quot;</span>
+<span class="w">        </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHce78383e3ff6e9dd73b6</span><span class="w"> </span>
+<span class="w">        </span><span class="err">AND</span><span class="w"> </span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PH2580641bbdd572759cb9</span><span class="w">  </span>
+<span class="w">        </span><span class="err">AND</span><span class="w">  </span><span class="p">(</span><span class="nn">resource:</span><span class="nt">PropertyConstraint-PHea6802ef02f99a848859</span><span class="p">)</span><span class="s">&quot;@en .</span>
 
-<span class="s">resource:PropertyConstraint-PHea6802ef02f99a848859</span>
-<span class="s">    a                                        ll:PropertyConstraint ;</span>
-<span class="s">    void:property</span>
-<span class="s">        [</span>
-<span class="s">            a                                        rdfs:Sequence ;</span>
-<span class="s">            rdf:_1                                   pnv:literalName </span>
-<span class="s">        ] ;</span>
+<span class="nn">resource:</span><span class="nt">PropertyConstraint-PHea6802ef02f99a848859</span><span class="w"></span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                </span><span class="nn">ll:</span><span class="nt">PropertyConstraint</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">property</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="kt">a</span><span class="w">                         </span><span class="nn">rdfs:</span><span class="nt">Sequence</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">1</span><span class="w">                    </span><span class="nn">pnv:</span><span class="nt">literalName</span><span class="w"> </span>
+<span class="w">        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="s">    ll:hasFilterFunction                     &quot;not_ilike&quot;@en ;</span>
-<span class="s">    ll:hasValueFunction                      &quot;%...%&quot;@en .</span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFilterFunction</span><span class="w">             </span><span class="s">&quot;not_ilike&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasValueFunction</span><span class="w">              </span><span class="s">&quot;%...%&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 
-<span class="s">resource:PropertyConstraint-PHce78383e3ff6e9dd73b6</span>
-<span class="s">    a                                        ll:PropertyConstraint ;</span>
-<span class="s">    void:property</span>
-<span class="s">        [</span>
-<span class="s">            a                                        rdfs:Sequence ;</span>
-<span class="s">            rdf:_1                                   saa:isInRecord ;</span>
-<span class="s">            rdf:_2                                   saa:IndexOpDoopregisters ;</span>
-<span class="s">            rdf:_3                                   saa:birthDate&gt; </span>
-<span class="s">        ] ;</span>
+<span class="nn">resource:</span><span class="nt">PropertyConstraint-PHce78383e3ff6e9dd73b6</span><span class="w"></span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                        </span><span class="nn">ll:</span><span class="nt">PropertyConstraint</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">property</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="kt">a</span><span class="w">                         </span><span class="nn">rdfs:</span><span class="nt">Sequence</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">1</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">isInRecord</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">2</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">IndexOpDoopregisters</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">3</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">birthDate</span><span class="w"> </span>
+<span class="w">        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="s">    ll:hasFilterFunction                     &quot;minimal_date&quot;@en ;</span>
-<span class="s">    ll:hasValueFunction                      1600 ;</span>
-<span class="s">    ll:hasFormatFunction                     &quot;YYYY-MM-DD&quot;@en .</span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFilterFunction</span><span class="w">              </span><span class="s">&quot;minimal_date&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasValueFunction</span><span class="w">               </span><span class="mi">1600</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormatFunction</span><span class="w">              </span><span class="s">&quot;YYYY-MM-DD&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 
-<span class="s">resource:PropertyConstraint-PH2580641bbdd572759cb9</span>
-<span class="s">    a                                        ll:PropertyConstraint ;</span>
-<span class="s">    void:property</span>
-<span class="s">        [</span>
-<span class="s">            a                                        rdfs:Sequence ;</span>
-<span class="s">            rdf:_1                                   saa:isInRecord ;</span>
-<span class="s">            rdf:_2                                   saa:IndexOpDoopregisters ;</span>
-<span class="s">            rdf:_3                                   saa:birthDate </span>
-<span class="s">        ] ;</span>
+<span class="nn">resource:</span><span class="nt">PropertyConstraint-PH2580641bbdd572759cb9</span><span class="w"></span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                </span><span class="nn">ll:</span><span class="nt">PropertyConstraint</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">property</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="kt">a</span><span class="w">                         </span><span class="nn">rdfs:</span><span class="nt">Sequence</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">1</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">isInRecord</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">2</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">IndexOpDoopregisters</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="err">rdf</span><span class="p">:</span><span class="err">_</span><span class="mi">3</span><span class="w">                    </span><span class="nn">saa:</span><span class="nt">birthDate</span><span class="w"> </span>
+<span class="w">        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="s">    ll:hasFilterFunction                     &quot;maximum_date&quot;@en ;</span>
-<span class="s">    ll:hasValueFunction                      &quot;1699&quot;@en ;</span>
-<span class="s">    ll:hasFormatFunction                     &quot;YYYY-MM-DD&quot;@en .</span>
-</code></pre></div></p>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFilterFunction</span><span class="w">              </span><span class="s">&quot;maximum_date&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasValueFunction</span><span class="w">               </span><span class="s">&quot;1699&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormatFunction</span><span class="w">              </span><span class="s">&quot;YYYY-MM-DD&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
 </details>
 <p><br></p>
 <h3 id="312-matching-formulation">3.1.2 Matching Formulation<a class="headerlink" href="#312-matching-formulation" title="Permanent link">&para;</a></h3>
-<p>For simple matching problems, finding co-referents can be done using a single matching algorithm (matcher). However, time and again the data reality often imposes the use of a number of matchers instead. In this latter scenario, clearly reporting on how these matchers work together for detecting co-referents is essential. A <code>Matching Formulation</code> entity is a resource for just doing the aforementioned, as depicted in Figure 2.3.</p>
-<p>Once resources of type <code>Resource Restriction</code> are created, one can go ahead and used them for specifying the restricted collections to be used in a particular <code>Matching Method</code>, which also specifies the Matching Algorithm and its parameters such as threshold, range and operrator.
-In the end, all <code>Matching Methods</code> used in a matching process are documented in the <code>Matching Formulation</code> resource as well as how they bind together in a logic expression given by the predicate <code>ll:hasFormulaDescription</code>. <div align="center"><br><img alt="MathingFormulation" src="../Images/Ont-MathingFormulation.jpg" /> <br>Fig 2.3: Specifying the way in which methods are logically combined </div> <BR></p>
-<details class="example"><summary><strong>Example 2</strong>: Linkset Logic Expression</summary><p>In Example 2.8, the <code>resource:PHb99da2ecd91ad533af65</code> is a <code>ll:MatchingFormulation</code> listing eight <code>ll:MatchingMethods</code> used for creating a linkset. They their logic combination is described as <code>ll:hasFormulaDescription</code>.
-Among the <code>ll:MatchingMethods</code>, the <code>resource:TIME_DELTA-PHfdc744f6bd0ced4e283a</code> is the only method detailes in this example, documenting the four <code>ll:ResourceSelections</code> involved, as well as the chosen <code>ll:MatchingAlgorithm</code>, namely <code>resource:TIME_DELTA</code>, besides the threshold (20), threshold-unit (&ldquo;Year&rdquo;@en), threshold-operator (&gt;=) and threshold-range  &ldquo;ℕ&rdquo; of the matching method.
+<p>For simple matching problems, finding co-referents can be done using a single matching algorithm (matcher). However, time and again the data reality often imposes the use of more than one matcher instead. In this latter scenario, clearly reporting on how these matchers work together for detecting co-referents is essential. A <span class="inline">Matching Formulation</span> entity is a resource for just doing the aforementioned, as depicted in Figure 3.</p>
+<p>Once resources of type <span class="inline">Resource Restriction</span> are created, one can go ahead and used them for specifying the restricted collections to be used in a particular <span class="inline">Matching Method</span>, which also specifies the Matching Algorithm and its parameters such as threshold, range and operrator.
+In the end, all <span class="inline">Matching Methods</span> used in a matching process are documented in the <span class="inline">Matching Formulation</span> resource as well as how they bind together in a logic expression given by the predicate <span class="inline">ll:hasFormulaDescription</span>. <div align="center"><br><img alt="MathingFormulation" src="../Images/Ont-MathingFormulation.jpg" /> <br>Fig 3: Specifying the way in which methods are logically combined </div> <BR></p>
+<details class="example" open="open"><summary><strong>Example 2</strong>: Linkset Logic Expression</summary><p>In Example 2.8, the <span class="inline">resource:PHb99da2ecd91ad533af65</span> is a <span class="inline">ll:MatchingFormulation</span> listing eight <span class="inline">ll:MatchingMethods</span> used for creating a linkset. They their logic combination is described as <span class="inline">ll:hasFormulaDescription</span>.
+Among the <span class="inline">ll:MatchingMethods</span>, the <span class="inline">resource:TIME_DELTA-PHfdc744f6bd0ced4e283a</span> is the only method detailes in this example, documenting the four <span class="inline">ll:ResourceSelections</span> involved, as well as the chosen <span class="inline">ll:MatchingAlgorithm</span>, namely <span class="inline">resource:TIME_DELTA</span>, <mark>besides the threshold (20), threshold-unit (&ldquo;Year&rdquo;@en), threshold-operator (&gt;=) and threshold-range  &ldquo;ℕ&rdquo; of the matching method.</mark></p>
+<details class="warning"><summary>Turtle Syntax</summary><p>When ever a literal in RDF syntax conatins quote or new line characters, the litreal
+should be in a three quote syntax (<code>"...""@en</code>). In the example below, we deliberately
+wrote the literal value of <span class="inline">ll:hasFormulaDescription</span> is in 
+a single quote (<code>"...""@en</code>) instead of a triple quote (<code>"""%...%="""@en</code>) as the syntax
+highliter is somewhat buggy.</p>
+</details>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c">################################################################################               </span><span class="w"></span>
 <span class="w"> </span><span class="c">#                           LINKSET LOGIC EXPRESSION                           #</span><span class="w"></span>
 <span class="w"> </span><span class="c">################################################################################ </span><span class="w"></span>
@@ -518,68 +618,329 @@ Among the <code>ll:MatchingMethods</code>, the <code>resource:TIME_DELTA-PHfdc74
 
 <span class="nn">resource:</span><span class="nt">PHb99da2ecd91ad533af65</span><span class="w"></span>
 
-<span class="w">    </span><span class="kt">a</span><span class="w">                                        </span><span class="nn">ll:</span><span class="nt">MatchingFormulation</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHfdc744f6bd0ced4e283a</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">Exact-PH6491d1db6855098a70be</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">LL_SOUNDEX-PH0ad3ad579d7a29347753</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH10433274b57dafdd1335</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">Exact-PH4d4187a08c3ba4c1cf0d</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHe40547b9d3b6381347b4</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">LEVENSHTEIN_APPROX-PH10f4c17bbf933cae647f</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                             </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH98a9575087817b951447</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                </span><span class="nn">ll:</span><span class="nt">MatchingFormulation</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHfdc744f6bd0ced4e283a</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">Exact-PH6491d1db6855098a70be</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">LL_SOUNDEX-PH0ad3ad579d7a29347753</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH10433274b57dafdd1335</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">Exact-PH4d4187a08c3ba4c1cf0d</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHe40547b9d3b6381347b4</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">LEVENSHTEIN_APPROX-PH10f4c17bbf933cae647f</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasMethod</span><span class="w">                     </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH98a9575087817b951447</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormulaDescription</span><span class="w">                 </span><span class="s">&quot;&quot;&quot;</span>
-<span class="s">        resource:TIME_DELTA-PHe40547b9d3b6381347b4  </span>
-<span class="s">        AND  resource:TIME_DELTA-PHfdc744f6bd0ced4e283a  </span>
-<span class="s">        AND (       </span>
-<span class="s">            resource:Exact-PH4d4187a08c3ba4c1cf0d  </span>
-<span class="s">            OR (</span>
-<span class="s">                    resource:BLOOTHOOFT_REDUCT-PH98a9575087817b951447  </span>
-<span class="s">                    AND resource:BLOOTHOOFT_REDUCT-PH10433274b57dafdd1335)  </span>
-<span class="s">                    OR (                </span>
-<span class="s">                            resource:Exact-PH6491d1db6855098a70be  </span>
-<span class="s">                            AND  (resource:LL_SOUNDEX-PH0ad3ad579d7a29347753  </span>
-<span class="s">                            AND  resource:LEVENSHTEIN_APPROX-PH10f4c17bbf933cae647f</span>
-<span class="s">                        )</span>
-<span class="s">                )</span>
-<span class="s">        )&quot;&quot;&quot;@en .</span>
-
-
-<span class="s"> ################################################################################               </span>
-<span class="s"> #                              METHOD SIGNATURES                               #</span>
-<span class="s"> ################################################################################</span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasFormulaDescription</span><span class="w">                 </span><span class="s">&quot;</span>
+<span class="w">        </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHe40547b9d3b6381347b4</span><span class="w">  </span>
+<span class="w">        </span><span class="err">AND</span><span class="w">  </span><span class="nn">resource:</span><span class="nt">TIME_DELTA-PHfdc744f6bd0ced4e283a</span><span class="w">  </span>
+<span class="w">        </span><span class="err">AND</span><span class="w"> </span><span class="p">(</span><span class="w">       </span>
+<span class="w">            </span><span class="nn">resource:</span><span class="nt">Exact-PH4d4187a08c3ba4c1cf0d</span><span class="w">  </span>
+<span class="w">            </span><span class="err">OR</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">                    </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH98a9575087817b951447</span><span class="w">  </span>
+<span class="w">                    </span><span class="err">AND</span><span class="w"> </span><span class="nn">resource:</span><span class="nt">BLOOTHOOFT_REDUCT-PH10433274b57dafdd1335</span><span class="p">)</span><span class="w">  </span>
+<span class="w">                    </span><span class="err">OR</span><span class="w"> </span><span class="p">(</span><span class="w">                </span>
+<span class="w">                            </span><span class="nn">resource:</span><span class="nt">Exact-PH6491d1db6855098a70be</span><span class="w">  </span>
+<span class="w">                            </span><span class="err">AND</span><span class="w">  </span><span class="p">(</span><span class="nn">resource:</span><span class="nt">LL_SOUNDEX-PH0ad3ad579d7a29347753</span><span class="w">  </span>
+<span class="w">                            </span><span class="err">AND</span><span class="w">  </span><span class="nn">resource:</span><span class="nt">LEVENSHTEIN_APPROX-PH10f4c17bbf933cae647f</span><span class="w"></span>
+<span class="w">                        </span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">)</span><span class="s">&quot;@en .</span>
 
 
-<span class="s">### METHOD SPECIFICATIONS TIME_DELTA</span>
-<span class="s">resource:TIME_DELTA-PHe40547b9d3b6381347b4</span>
+<span class="w"> </span><span class="c">################################################################################               </span><span class="w"></span>
+<span class="w"> </span><span class="c">#                              METHOD SIGNATURES                               #</span><span class="w"></span>
+<span class="w"> </span><span class="c">################################################################################</span><span class="w"></span>
 
-<span class="s">    a                                        ll:MatchingMethod ;</span>
-<span class="s">    ll:hasAlgorithm                          resource:TIME_DELTA ;</span>
-<span class="s">    ll:hasThresholdRange                     &quot;ℕ&quot; ;</span>
 
-<span class="s">    ### SOURCE PREDICATE CONFIGURATION</span>
-<span class="s">    ll:hasSubjResourceSelection              resource:ResourceSelection-PHbe38976fdf884b6c4a8e ;</span>
-<span class="s">    ll:hasSubjResourceSelection              resource:ResourceSelection-PHe8fa664d04ad00aaa697 ;</span>
+<span class="c">### METHOD SPECIFICATIONS TIME_DELTA</span><span class="w"></span>
+<span class="nn">resource:</span><span class="nt">TIME_DELTA-PHe40547b9d3b6381347b4</span><span class="w"></span>
 
-<span class="s">    ### TARGET PREDICATE CONFIGURATION</span>
-<span class="s">    ll:hasObjResourceSelection               resource:ResourceSelection-PH71818c17d54a8fbec22b ;</span>
-<span class="s">    ll:hasObjResourceSelection               resource:ResourceSelection-PHc8a3c6e494d230b79a6b .</span>
+<span class="w">    </span><span class="kt">a</span><span class="w">                                </span><span class="nn">ll:</span><span class="nt">MatchingMethod</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasAlgorithm</span><span class="w">                  </span><span class="nn">resource:</span><span class="nt">TIME_DELTA</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasThresholdRange</span><span class="w">             </span><span class="s">&quot;ℕ&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="s">•••</span>
-</code></pre></div></p>
+<span class="w">    </span><span class="c">### SOURCE PREDICATE CONFIGURATION</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasSubjResourceSelection</span><span class="w">      </span><span class="nn">resource:</span><span class="nt">ResourceSelection-PHbe38976fdf884b6c4a8e</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasSubjResourceSelection</span><span class="w">      </span><span class="nn">resource:</span><span class="nt">ResourceSelection-PHe8fa664d04ad00aaa697</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### TARGET PREDICATE CONFIGURATION</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasObjResourceSelection</span><span class="w">       </span><span class="nn">resource:</span><span class="nt">ResourceSelection-PH71818c17d54a8fbec22b</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasObjResourceSelection</span><span class="w">       </span><span class="nn">resource:</span><span class="nt">ResourceSelection-PHc8a3c6e494d230b79a6b</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="err">•••</span><span class="w"></span>
+</code></pre></div>
+
 </details>
 <p><br></p>
 <h3 id="313-linkset">3.1.3 Linkset<a class="headerlink" href="#313-linkset" title="Permanent link">&para;</a></h3>
-<p>This step documents a linkset metadata including WHAT - HOW - WHEN - WHO and other processes explaining the aboutness of links. The <code>Matching Formulation</code>  specifies <strong>HOW</strong> entities are matched and <code>Resource Selection</code> specifies <strong>WHAT</strong> to match as subject and object targets. Also some statistic on the matching results can be reported such as the number of links found, the numbers of entities linked, <strong>WHO</strong> created the linkset and <strong>WHEN</strong>. Finally, a `Validation&rsquo; entity can also be specified, comprising metadata with statitics and auhtority information on the validation process. Observe that when one or more validations are provided, statistics on this matter can be included in the linkset metadata, including eventual contradictions if one validation says a link is correct while another says it is not.</p>
-<p>As discussed earlier in this section, according to the VoID documentation, the <code>void:Linkset</code> definition expects as datasources exactly one source and one target, different from each other. This means it is more restrictive than the <code>ll:Linkset</code> here proposed, since the latter also expects a linkset to contain links within a datasource or across more than two. Therefore, we do not directly reuse that concept (and its correspoding properties void:subjects/objectsTarget). Naturally, one could still use <code>void:Linkset</code> for other purposes, but at the risk of abusing the VoID vocabulary if its instances do not really fit the required restrictions. Moreover, a <code>void:Linkset</code> (i.e. a resource representing a linkset&rsquo;s metadata) is also not  an instance of <code>ll:Linkset</code> since the later requires the description of the processes underlying the creation of the links, which is not the case for the first.</p>
-<p><div align="center"><br><img alt="Linkset" src="../Images/Ont-Linkset.jpg" /> <br>Fig 2.4: Specifying the linkset&rsquo;s context</div>
+<p>This step documents a linkset metadata including WHAT - HOW - WHEN - WHO and other processes explaining the aboutness of links. The <span class="inline">Matching Formulation</span>  specifies <strong>HOW</strong> entities are matched and <span class="inline">Resource Selection</span> specifies <strong>WHAT</strong> to match as subject and object targets. Also some statistic on the matching results can be reported such as the number of links found, the numbers of entities linked, <strong>WHO</strong> created the linkset and <strong>WHEN</strong>. Finally, a <span class="inline">Validation</span> entity can also be specified, comprising metadata with statitics and auhtority information on the validation process. Observe that when one or more validations are provided, statistics on this matter can be included in the linkset metadata, including eventual contradictions if one validation says a link is correct while another says it is not.</p>
+<p>As discussed earlier in this section, according to the [<a href="../12.References/#VoID">VoID</a>] documentation, the <span class="inline">void:Linkset</span> definition expects as datasources exactly one source and one target, different from each other. This means it is more restrictive than the <span class="inline">ll:Linkset</span> here proposed, since the latter also expects a linkset to contain links within a datasource or across more than two. Therefore, we do not directly reuse that concept (and its correspoding properties void:subjects/objectsTarget). Naturally, one could still use <span class="inline">void:Linkset</span> for other purposes, but at the risk of abusing the VoID vocabulary if its instances do not really fit the required restrictions. Moreover, a <span class="inline">void:Linkset</span> (i.e. a resource representing a linkset&rsquo;s metadata) is also not  an instance of <span class="inline">ll:Linkset</span> since the later requires the description of the processes underlying the creation of the links, which is not the case for the first.</p>
+<p><div align="center"><br><img alt="Linkset" src="../Images/Ont-Linkset.jpg" /> <br>Fig 4: Specifying the linkset&rsquo;s context</div>
 <br></p>
+<details class="example" open="open"><summary><strong>Example 3:</strong> A linkset annotation</summary><div class="highlight"><pre><span></span><code><span class="c">### LINKSET 15</span><span class="w"></span>
+<span class="err">linkset</span><span class="p">:</span><span class="mi">15</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">a</span><span class="w">                        </span><span class="nn">ll:</span><span class="nt">Linkset</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">feature</span><span class="w">             </span><span class="nn">format:</span><span class="nt">Turtle</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">cc:</span><span class="nt">attributionName</span><span class="w">       </span><span class="s">&quot;LenticularLens&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">cc:</span><span class="nt">license</span><span class="w">               </span><span class="nv">&lt;http://purl.org/NET/rdflicense/W3C1.0&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">created</span><span class="w">          </span><span class="s">&quot;2020-09-26T09:37:23.933624&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">creator</span><span class="w">          </span><span class="s">&quot;AL IDRISSOU&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">creator</span><span class="w">          </span><span class="s">&quot;GoldenAgents&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">linkPredicate</span><span class="w">       </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">               </span><span class="s">&quot;Linkset 9&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">description</span><span class="w">      </span><span class="s">&quot;LINSET-15-9: Test Baptism against Marriage and burial with several nested methods &quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### VOID LINKSET STATS</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">entities</span><span class="w">            </span><span class="mi">12580</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### LENTICULAR LENS LINKSET STATS</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### SOURCE ENTITY TYPE SELECTION(S)</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">subjectsTarget</span><span class="w">         </span><span class="nn">resource:</span><span class="nt">ResourceSelection-2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### TARGET ENTITY TYPE SELECTION(S)</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">objectsTarget</span><span class="w">          </span><span class="nn">resource:</span><span class="nt">ResourceSelection-1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">objectsTarget</span><span class="w">          </span><span class="nn">resource:</span><span class="nt">ResourceSelection-3</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">### THE LOGIC FORMULA</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ll:</span><span class="nt">hasLogicFormulation</span><span class="w">    </span><span class="nn">resource:</span><span class="nt">PHb6e5e320dc08d7d9dd98</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
+</details>
+<p><br></p>
 <h3 id="314-lens">3.1.4 Lens<a class="headerlink" href="#314-lens" title="Permanent link">&para;</a></h3>
-<p><br> <span style="color: purple">  <strong>LENS.</strong> </span>
-<mark>Another process relevant to document is the creation of Lenses. In short, a lens is the result of a set-like operation over one or more Linkset and or Lens. Therefore, the entity <code>Lens</code> documents them as <code>ll:hasTarget</code></mark></p>
-<p><div align="center"><br><img alt="Lens" src="../Images/Ont-Lens.jpg" /> <br>Fig 2.5: Specifying the linkset&rsquo;s context</div>
+<p><!--<span style="color: purple">  **LENS.** </span>--> 
+Another process relevant to document is the creation of Lenses. In short, a lens is the result of a set-like operation over one or more Linkset and or Lens. Therefore, the entity <span class="inline">Lens</span> documents them as <span class="inline">ll:hasTarget</span></p>
+<p><div align="center"><br><img alt="Lens" src="../Images/Ont-Lens.jpg" /> <br>Fig 5: Specifying the linkset&rsquo;s context</div>
 <br></p>
-<h2 id="32-owl-ontology">3.2 OWL Ontology<a class="headerlink" href="#32-owl-ontology" title="Permanent link">&para;</a></h2>
+<details class="example" open="open"><summary><strong>Example 4:</strong> A lens annotation</summary><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+</details>
+<h2 id="32-owl-ontology">3.2 OWL Ontology <img alt="🦉" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f989.svg" title=":owl:" /><a class="headerlink" href="#32-owl-ontology" title="Permanent link">&para;</a></h2>
+<h3 id="321-classes">3.2.1 Classes<a class="headerlink" href="#321-classes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> Class </div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ll:ResourceSelection</td>
+<td>A <strong>ResourceSelection</strong> is a collection of resources stemmed from the same dataset and partitioned on the basis of a given class and optionally a number of predicates having there respective predicate-value(s) enforced within a pre-defined range.</td>
+</tr>
+<tr>
+<td>ll:PropertyConstraint</td>
+<td>A <strong>PropertyConstraint</strong> is a resource that maps an explicitly defined <em>property-path</em> to a <em>value-range constraint</em>. In this way, resources that are described with the mapped property-path are to pass the <em>value-range constraint test</em> to be selected for further processing. Such a property-path can be (i) a sequence of properties only or (ii) a more precise path where a class is associated to a property in the following pattern: <br><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>&lt;:property&gt;/&lt;:class&gt;/&lt;:property&gt;/../&lt;:class&gt;/&lt;:property&gt;</mtext></mrow><annotation encoding="application/x-tex">\text{&lt;:property&gt;/&lt;:class&gt;/&lt;:property&gt;/../&lt;:class&gt;/&lt;:property&gt;}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">&lt;:property&gt;/&lt;:class&gt;/&lt;:property&gt;/../&lt;:class&gt;/&lt;:property&gt;</span></span></span></span></span>.</td>
+</tr>
+<tr>
+<td>ll:MatchingMethod</td>
+<td>A <strong>MatchingMethod</strong> is a resource that makes explicit all pre-requisites of a matching algorithm including the conditions in which the algorithm is to accept a discovered link (threshold).</td>
+</tr>
+<tr>
+<td>ll:MatchingFormulation</td>
+<td>A <strong>MatchingFormulation</strong> is a resource that makes explicit all matching-methods involved in the creation of a Linkset and how the methods logically work jointly.</td>
+</tr>
+<tr>
+<td>ll:Linkset</td>
+<td>In [<a href="../12.References/#VoID">VoID</a>], a <strong>Linkset</strong> is a collection of RDF links between two datasets where all subjects stem from one dataset and all objects from the other dataset. In here, we alleviate such strict restriction on the number of linked datasets to be one, two or more. Therefore, here a linkset is a collection of RDF links between dataset(s), using the same link predicate (regardless of the link being an equality predicate or not). This predicate is called the linktype of the linkset.</td>
+</tr>
+<tr>
+<td>ll:Lens</td>
+<td><strong>Content-wise</strong>, a <strong>Lens</strong> is a type of RDF linkset (in the sense that it is a collection of links sharing the same linktype) also involving one, two or more datasets. However, <strong>context-wise</strong>, it differs from a linkset as it is generated using different process (set-like link manipulation operators such as Union, Intersection, Difference or Transitivity) as compared to how a linkset comes about (matching algorithms).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="322-properties">3.2.2 Properties<a class="headerlink" href="#322-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> ResourceSelection Property </div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rdfs:label</td>
+<td></td>
+</tr>
+<tr>
+<td>void:subset</td>
+<td></td>
+</tr>
+<tr>
+<td>void:classPartition</td>
+<td></td>
+</tr>
+<tr>
+<td>void:propertyPartition</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasFormulaDescription</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> MatchingMethod Property </div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ll:hasAlgorithm</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasThresholdRange</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasSubjResourceSelection</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasObjResourceSelection</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> PropertyConstraint Property </div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void:property</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasFilterFunction</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasValueFunction</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasFormatFunction</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> MatchingFormulation Property </div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ll:hasMethod</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasFormulaDescription</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> Linkset Property</div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cc:attributionName</td>
+<td></td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:created</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:creator</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:description</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:subjectsTarget</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:objectsTarget</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasLogicFormulation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><div style="width:195px"> Lens Property</div></th>
+<th><div style="width:550px"> Purpose </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cc:attributionName</td>
+<td></td>
+</tr>
+<tr>
+<td>cc:license</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:created</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:creator</td>
+<td></td>
+</tr>
+<tr>
+<td>dcterms:description</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:subjectsTarget</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:objectsTarget</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:target</td>
+<td></td>
+</tr>
+<tr>
+<td>ll:hasLogicFormulation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -613,13 +974,13 @@ Among the <code>ll:MatchingMethods</code>, the <code>resource:TIME_DELTA-PHfdc74
           </a>
         
         
-          <a href="../04.Algorithms/" title="4. Algorithms" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../04.Algorithms/" title="4. Matching Algorithms" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                4. Algorithms
+                4. Matching Algorithms
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

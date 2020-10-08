@@ -194,8 +194,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04.Algorithms/" title="4. Algorithms" class="md-nav__link">
-      4. Algorithms
+    <a href="../04.Algorithms/" title="4. Matching Algorithms" class="md-nav__link">
+      4. Matching Algorithms
     </a>
   </li>
 
@@ -296,8 +296,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../08.LinkExport/" title="7. Link Export" class="md-nav__link">
-      7. Link Export
+    <a href="../07.LinkVisualisation/" title="7. Visualising Identity Network" class="md-nav__link">
+      7. Visualising Identity Network
     </a>
   </li>
 
@@ -308,8 +308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.DataIntegration/" title="8. Data Integration" class="md-nav__link">
-      8. Data Integration
+    <a href="../08.LinkValidation/" title="8. Link Validation" class="md-nav__link">
+      8. Link Validation
     </a>
   </li>
 
@@ -320,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10.Installation/" title="9. Using Lenticular Lens" class="md-nav__link">
-      9. Using Lenticular Lens
+    <a href="../09.LinkExport/" title="9. Link Export" class="md-nav__link">
+      9. Link Export
     </a>
   </li>
 
@@ -332,8 +332,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.References/" title="10. References" class="md-nav__link">
-      10. References
+    <a href="../10.DataIntegration/" title="10. Data Integration" class="md-nav__link">
+      10. Data Integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../11.Installation/" title="11. Using Lenticular Lens" class="md-nav__link">
+      11. Using Lenticular Lens
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../12.References/" title="12. References" class="md-nav__link">
+      12. References
     </a>
   </li>
 
@@ -409,12 +433,12 @@
               
                 
                 
-                <h1 id="5-link-manipulation">5. LINK MANIPULATION<a class="headerlink" href="#5-link-manipulation" title="Permanent link">&para;</a></h1>
+                <h1 id="5-link-manipulation">5. LINK MANIPULATION <img alt="🔧" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f527.svg" title=":wrench:" /> <!--:construction:--><a class="headerlink" href="#5-link-manipulation" title="Permanent link">&para;</a></h1>
 <p>After generating a number of linksets and lenses, one may want to combine, split or filter some of the generated links while others may want to infer new links using existing alignments. The <code>MANIPULATE</code> menu provides means for exactly doing that. The <code>MANIPULATE</code> menu makes it possible to apply set like operators such as UNION, INTERSECTION, DIFFERENCE, TRANSITIVE and IN-SET over alignments in ways that suit best the user according to her envisaged final integration goal. 
 <br></p>
 <p>For the purpose of illustration, we provide two linksets (<code>ex:DC-Heroes-Identity</code>, <code>ex:Marvel-Heroes-Identity</code>) of superheroes from the DC and Marvel Universe. According to the metadata of these linksets, they originate from an attempt to de-duplicate the datasets of each universe. This can be observed as the source and target entities composing the links in each linkset are from the same datasets. From the metadata we also observe that, the value of the property <code>void:triples</code> highlights that each linkset is composed of ten links. Furthermore, When taking a look at the links within each linkset, the RDF* format of the triples informs that a link validation took place for each link in the set.</p>
 <p>Theses sets will be used for illustrating the set-like operators discussed in this section.</p>
-<details class="example"><summary>Linksets originating from deduplications</summary><div class="highlight"><pre><span></span><code><span class="nn">ex:</span><span class="nt">DC-Heroes-Identity</span><span class="w"></span>
+<details class="example" open="open"><summary>Linksets originating from deduplications</summary><div class="highlight"><pre><span></span><code><span class="nn">ex:</span><span class="nt">DC-Heroes-Identity</span><span class="w"></span>
 <span class="w">    </span><span class="kt">a</span><span class="w">                     </span><span class="nn">void:</span><span class="nt">Linkset</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="nn">dcterms:</span><span class="nt">description</span><span class="w">   </span><span class="s">&quot;Identifying DC&#39;s comics superheroes&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="nn">void:</span><span class="nt">subjectsTarget</span><span class="w">   </span><span class="nn">dataset:</span><span class="nt">DC-Comics</span><span class="p">;</span><span class="w"></span>
@@ -767,13 +791,13 @@ Formally this can be translated into: <code>ex:MovieCharacter</code> <code>InSet
           </a>
         
         
-          <a href="../08.LinkExport/" title="7. Link Export" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../07.LinkVisualisation/" title="7. Visualising Identity Network" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                7. Link Export
+                7. Visualising Identity Network
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
