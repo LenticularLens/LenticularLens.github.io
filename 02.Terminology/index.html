@@ -325,6 +325,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#matching-algorithm" class="md-nav__link">
+    Matching Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triple-store" class="md-nav__link">
+    Triple Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#owldl" class="md-nav__link">
     OWL/DL
   </a>
@@ -399,8 +413,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../07.LinkVisualisation/" title="7. Visualising Identity Network" class="md-nav__link">
-      7. Visualising Identity Network
+    <a href="../07.LinkVisualisation/" title="7. Visualising link Network" class="md-nav__link">
+      7. Visualising link Network
     </a>
   </li>
 
@@ -613,6 +627,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#matching-algorithm" class="md-nav__link">
+    Matching Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triple-store" class="md-nav__link">
+    Triple Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#owldl" class="md-nav__link">
     OWL/DL
   </a>
@@ -665,12 +693,12 @@ The sequence of terms is called a <strong>triple</strong> where each of its term
 <span class="inline">sameAs</span> . <br>
 In RDF, any triple is an <strong>RDF STATEMENT</strong>. There exist various syntaxes for representing triple statements. For further reading, see
  <a href="https://www.w3.org/TR/n-triples/">N-Triples</a>, <a href="https://www.w3.org/TeamSubmission/n3/">Notation3</a>, <a href="https://www.w3.org/TR/n-quads/">N-Quads</a>, <a href="https://www.w3.org/TR/turtle/">Turtle</a>,  <a href="https://www.w3.org/TR/rdf-syntax-grammar/#:~:text=Definition%3A,as%20defined%20in%20this%20document.">RDF XML</a>, <a href="https://www.w3.org/MarkUp/2004/rdf-a">RDFa</a>, <a href="https://www.w3.org/TR/json-ld11/">JSON-LD</a>&hellip; <br></p>
-<details class="example" open="open"><summary><strong>Example 2</strong>: Triples in N-TRIPLE syntax</summary><div class="highlight"><pre><span></span><code><span class="nl">&lt;http://example.org/hero#Spiderman&gt;</span>  <span class="nl">&lt;http://xmlns.com/foaf/0.1/name&gt;</span>        <span class="s">&quot;Peter-Parker&quot;</span> <span class="p">.</span>
+<details class="example" open="open"><summary><strong>Example 1</strong>: <span style="color:blue">Triples in N-TRIPLE syntax</span></summary><div class="highlight"><pre><span></span><code><span class="nl">&lt;http://example.org/hero#Spiderman&gt;</span>  <span class="nl">&lt;http://xmlns.com/foaf/0.1/name&gt;</span>        <span class="s">&quot;Peter-Parker&quot;</span> <span class="p">.</span>
 <span class="nl">&lt;http://example.org/hero#Spiderman&gt;</span>  <span class="nl">&lt;http://www.w3.org/2002/07/owl#sameAs&gt;</span>  <span class="nl">&lt;http://example.org/person#Peter-Parker&gt;</span> <span class="p">.</span>
 </code></pre></div>
 
 </details>
-<details class="example" open="open"><summary><strong>Example 3</strong>: Triples in Turtle syntax</summary><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">@prefix</span><span class="w">  </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<details class="example" open="open"><summary><strong>Example 2</strong>: <span style="color:blue">Triples in Turtle syntax</span></summary><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">@prefix</span><span class="w">  </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="w">    </span><span class="k">@prefix</span><span class="w"> </span><span class="nn">rel:</span><span class="w"> </span><span class="nv">&lt;http://www.perceive.net/schemas/relationship/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 
 <span class="w">    </span><span class="nn">ex:</span><span class="nt">green-goblin</span><span class="w">  </span><span class="nn">rel:</span><span class="nt">enemyOf</span><span class="w">  </span><span class="nn">ex:</span><span class="nt">Spiderman</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
@@ -686,7 +714,7 @@ In RDF, any triple is an <strong>RDF STATEMENT</strong>. There exist various syn
 <h2 id="referents">Referents<a class="headerlink" href="#referents" title="Permanent link">&para;</a></h2>
 <p><!--<span style="color: purple">  **IRI - URI - URL - URN .** </span> -->
 IRI - URI - URL - URN constitute ways in which things (resources) in the real world can be referred to in the digital world. &ldquo;The resource denoted by an IRI is called its <strong>referent</strong>, and the resource denoted by a literal is called its literal value.&rdquo; <a href="https://www.w3.org/TR/rdf11-concepts/#data-model">RDF 1.1</a>. In the IRI example provided below, we illustrate six IRIs referents of resources of various types (hero, villain and vocabulary). </p>
-<details class="example" open="open"><summary><strong>Example 1</strong>: IRIs</summary><div class="highlight"><pre><span></span><code> A resource&#39;s REFERENT is an IRI.
+<details class="example" open="open"><summary><strong>Example 3</strong>: <span style="color:blue">IRIs</span></summary><div class="highlight"><pre><span></span><code> A resource&#39;s REFERENT is an IRI.
  A resource&#39;s LITERAL VALUE is a LITERAL.
 
     http://example.org/villain#Green-Goblin
@@ -723,7 +751,7 @@ The process of accepting or rejecting a link. This process is documented with th
 <h2 id="named-graph">Named-graph<a class="headerlink" href="#named-graph" title="Permanent link">&para;</a></h2>
 <p><!--<span style="color: purple">  **NAMED GRAPH.** </span> --> 
 According to <a href="https://en.wikipedia.org/wiki/Named_graph">Wikipedia</a>, named graphs are a key concept of Semantic Web architecture in which a set of Resource Description Framework statements (a graph) are identified using a IRI, allowing descriptions to be made of that set of statements such as context, provenance information or other such metadata.</p>
-<details class="example" open="open"><summary><strong>Example 4</strong>: Named-graph </summary><p>The example below illustrates a turtle named graph syntax of a linkset of three links using the owl:sameAs linktype. 
+<details class="example" open="open"><summary><strong>Example 4</strong>: <span style="color:blue">Named-graph</span> </summary><p>The example below illustrates a turtle named graph syntax of a linkset of three links using the owl:sameAs linktype. 
 In the example, <a href="http://example.org/#linkset-1">http://example.org/#linkset-1</a> is the IRI of the named graph. For 
 more detail on Turtle RDF syntax, See <a href="https://www.w3.org/TR/turtle/#simple-triples">https://www.w3.org/TR/turtle/#simple-triples</a>. In this page, EXAMPLE 9 illustrates different ways of writing triples in Turtle.
 <div class="highlight"><pre><span></span><code><span class="k">@base</span><span class="w"> </span><span class="nv">&lt;http://example.org/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
@@ -743,7 +771,7 @@ more detail on Turtle RDF syntax, See <a href="https://www.w3.org/TR/turtle/#sim
 <h3 id="default-graph">Default Graph<a class="headerlink" href="#default-graph" title="Permanent link">&para;</a></h3>
 <p><!--<br><span style="color: purple">  **DEFAULT GRAPH.** </span> -->
 In a triple-store jargon, any triple without a specific named-graph ends up in the <strong>default graph</strong>. In the example below, the triple at line 4 is located in the default graph while triples at line 8 and 9 are in an <strong>explicitly stated graph</strong>, in the named-graph: ex:linkset-1.</p>
-<details class="example" open="open"><summary><strong>Example 5</strong>: Default Named-graph </summary><div class="highlight"><pre><span></span><code><span class="k">@prefix</span><span class="w">   </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<details class="example" open="open"><summary><strong>Example 5</strong>: <span style="color:blue">Default Named-graph</span></summary><div class="highlight"><pre><span></span><code><span class="k">@prefix</span><span class="w">   </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="k">@prefix</span><span class="w">  </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 
 <span class="nn">ex:</span><span class="nt">Chiara</span><span class="w">   </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w">  </span><span class="nn">ex:</span><span class="nt">Latronico</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
@@ -768,12 +796,15 @@ Therefore, here a linkset is a collection of RDF links between <strong>dataset(s
 <h2 id="linkset-lens-specification">Linkset / Lens Specification<a class="headerlink" href="#linkset-lens-specification" title="Permanent link">&para;</a></h2>
 <p><!--<span style="color: purple">  **LINK SPECIFICATION.** </span> -->
 In the <strong>Lenticular Lens</strong>, a  Linkset / Lens specification can be viewed as a reproducibility metadata. It provides information on how set of links came to be. In other worlds, it explicitly defines the context in which a link hold and supports decisions making during the validation process (accepting or rejecting a link). </p>
+<h2 id="matching-algorithm">Matching Algorithm<a class="headerlink" href="#matching-algorithm" title="Permanent link">&para;</a></h2>
+<p>A set of rules followed by a computer for finding pairs of matching resources. An algorithm can be further categorised as automated or semi-automated depending on whether it requires user assistance or not. Most matching algorithms employed in the Lenticular Lens are semi-automated.</p>
+<h2 id="triple-store"><mark>Triple Store</mark><a class="headerlink" href="#triple-store" title="Permanent link">&para;</a></h2>
 <h2 id="owldl"><mark>OWL/DL</mark><a class="headerlink" href="#owldl" title="Permanent link">&para;</a></h2>
 <h2 id="turtle-prefixes">Turtle Prefixes<a class="headerlink" href="#turtle-prefixes" title="Permanent link">&para;</a></h2>
 <!--<br> <span style="color: purple">  **PREFIX.** </span> -->
 
 <div class="admonition info">
-<p class="admonition-title"><strong>Example 6</strong>: Prefixes used in this manual.</p>
+<p class="admonition-title"><strong>Example 6</strong>: <span style="color:blue">Prefixes used in this manual.</span></p>
 <p>Below are the prefixes used in this document
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="k">@prefix</span><span class="w">          </span><span class="nn">A:</span><span class="w"> </span><span class="nv">&lt;http://example.org/A#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">          </span><span class="nn">B:</span><span class="w"> </span><span class="nv">&lt;http://example.org/B#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
@@ -795,8 +826,9 @@ In the <strong>Lenticular Lens</strong>, a  Linkset / Lens specification can be 
 <span class="w">   </span><span class="k">@prefix</span><span class="w">       </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">        </span><span class="nn">rel:</span><span class="w"> </span><span class="nv">&lt;http://www.perceive.net/schemas/relationship/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">        </span><span class="nn">sim:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/ontology/similarity/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">   </span><span class="k">@prefix</span><span class="w">  </span><span class="nn">singleton:</span><span class="w"> </span><span class="nv">&lt;http://lenticularlens.org/singleton#&gt;</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">       </span><span class="nn">void:</span><span class="w"> </span><span class="nv">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="w">   </span><span class="k">@prefix</span><span class="w">   </span><span class="nn">voidPlus:</span><span class="w"> </span><span class="nv">&lt;http://vocabulary/voidPlus#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="w">   </span><span class="k">@prefix</span><span class="w">   </span><span class="nn">voidPlus:</span><span class="w"> </span><span class="nv">&lt;http://lenticularlens.org/voidPlus#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w"> </span><span class="nn">validation:</span><span class="w"> </span><span class="nv">&lt;http://vocabulary/validation#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">       </span><span class="nn">wiki:</span><span class="w"> </span><span class="nv">&lt;http://en.wikipedia.org/wiki/&gt;</span><span class="w"></span>
 <span class="w">   </span><span class="k">@prefix</span><span class="w">   </span><span class="nn">wikidata:</span><span class="w"> </span><span class="nv">&lt;http://www.wikidata.org/entity/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
