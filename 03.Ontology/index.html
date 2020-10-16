@@ -325,6 +325,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#linkset" class="md-nav__link">
+    Linkset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lens" class="md-nav__link">
+    Lens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#partition" class="md-nav__link">
     Partition
   </a>
@@ -376,20 +390,6 @@
           <li class="md-nav__item">
   <a href="#validatedlinkdataset" class="md-nav__link">
     ValidatedLinkDataset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lens" class="md-nav__link">
-    Lens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linkset" class="md-nav__link">
-    Linkset
   </a>
   
 </li>
@@ -1199,6 +1199,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#linkset" class="md-nav__link">
+    Linkset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lens" class="md-nav__link">
+    Lens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#partition" class="md-nav__link">
     Partition
   </a>
@@ -1250,20 +1264,6 @@
           <li class="md-nav__item">
   <a href="#validatedlinkdataset" class="md-nav__link">
     ValidatedLinkDataset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lens" class="md-nav__link">
-    Lens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linkset" class="md-nav__link">
-    Linkset
   </a>
   
 </li>
@@ -3070,6 +3070,60 @@ A <span class="inline"><a href="#lens">void+:Lens</a></span> is also a <span cla
 <!--**Figure 1:** Ontology overview-->
 
 <p>See Figure 7 and 8 above for an overview.</p>
+<h4 id="linkset">Linkset<a class="headerlink" href="#linkset" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><div style="width:100px"> Property </div></th>
+<th><div style="width:700px"> Value </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URI</td>
+<td><code>http://lenticularlens.org/voidPlus/Linkset</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td><p>A collection of RDF links between <em>one</em>, <em>two</em> or  <em>more</em> void:Datasets. Only, all links share the same link-predicate and all subjects stem from a set of void datasets (D<sub>1</sub>) while all objects stem from either the same D<sub>1</sub> or a different set of void datasets D<sub>2</sub>.</p></td>
+</tr>
+<tr>
+<td>Super-classes</td>
+<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /><a href="DirectedLinkDataset">void+:DirectedLinkDataset</a> <br /></td>
+</tr>
+<tr>
+<td>Equivalent to</td>
+<td><a href="DirectedLinkDataset">void+:DirectedLinkDataset</a><br /> <strong>and</strong> (<a href="hasFormulation">void+:hasFormulation</a> <strong>some</strong> <a href="LinksetFormulation">void+:LinksetFormulation</a>) <br /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="lens">Lens<a class="headerlink" href="#lens" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><div style="width:100px"> Property </div></th>
+<th><div style="width:700px"> Value </div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URI</td>
+<td><code>http://lenticularlens.org/voidPlus/Lens</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td><p>Similar to a void+:Linkset (in the sense that it is a collection of links sharing the same linktype) also involving one, two or more datasets, but not necessarilly directed. Moreover, context-wise, it differs from a linkset as it is generated using different processes (set-like link manipulation operators such as Union, Intersection, Difference or Transitivity) as compared to how a linkset comes about (matching algorithms).</p></td>
+</tr>
+<tr>
+<td>Super-classes</td>
+<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /></td>
+</tr>
+<tr>
+<td>Equivalent to</td>
+<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /> <strong>and</strong> (<a href="hasFormulation">void+:hasFormulation</a> <strong>some</strong> <a href="LensFormulation">void+:LensFormulation</a>)<br /></td>
+</tr>
+</tbody>
+</table>
 <h4 id="partition">Partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -3311,60 +3365,6 @@ A <span class="inline"><a href="#lens">void+:Lens</a></span> is also a <span cla
 <tr>
 <td>Equivalent to</td>
 <td><a href="LinkDataset">void+:LinkDataset</a> <strong>and</strong> (<a href="hasValidation">void+:hasValidation</a> <strong>some</strong> <a href="Validation">void+:Validation</a>)</td>
-</tr>
-</tbody>
-</table>
-<h4 id="lens">Lens<a class="headerlink" href="#lens" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th><div style="width:100px"> Property </div></th>
-<th><div style="width:700px"> Value </div></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URI</td>
-<td><code>http://lenticularlens.org/voidPlus/Lens</code></td>
-</tr>
-<tr>
-<td>Description</td>
-<td><p>Similar to a void+:Linkset (in the sense that it is a collection of links sharing the same linktype) also involving one, two or more datasets, but not necessarilly directed. Moreover, context-wise, it differs from a linkset as it is generated using different processes (set-like link manipulation operators such as Union, Intersection, Difference or Transitivity) as compared to how a linkset comes about (matching algorithms).</p></td>
-</tr>
-<tr>
-<td>Super-classes</td>
-<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /></td>
-</tr>
-<tr>
-<td>Equivalent to</td>
-<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /> <strong>and</strong> (<a href="hasFormulation">void+:hasFormulation</a> <strong>some</strong> <a href="LensFormulation">void+:LensFormulation</a>)<br /></td>
-</tr>
-</tbody>
-</table>
-<h4 id="linkset">Linkset<a class="headerlink" href="#linkset" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th><div style="width:100px"> Property </div></th>
-<th><div style="width:700px"> Value </div></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URI</td>
-<td><code>http://lenticularlens.org/voidPlus/Linkset</code></td>
-</tr>
-<tr>
-<td>Description</td>
-<td><p>A collection of RDF links between <em>one</em>, <em>two</em> or  <em>more</em> void:Datasets. Only, all links share the same link-predicate and all subjects stem from a set of void datasets (D<sub>1</sub>) while all objects stem from either the same D<sub>1</sub> or a different set of void datasets D<sub>2</sub>.</p></td>
-</tr>
-<tr>
-<td>Super-classes</td>
-<td><a href="DocumentedLinkDataset">void+:DocumentedLinkDataset</a> <br /><a href="DirectedLinkDataset">void+:DirectedLinkDataset</a> <br /></td>
-</tr>
-<tr>
-<td>Equivalent to</td>
-<td><a href="DirectedLinkDataset">void+:DirectedLinkDataset</a><br /> <strong>and</strong> (<a href="hasFormulation">void+:hasFormulation</a> <strong>some</strong> <a href="LinksetFormulation">void+:LinksetFormulation</a>) <br /></td>
 </tr>
 </tbody>
 </table>
