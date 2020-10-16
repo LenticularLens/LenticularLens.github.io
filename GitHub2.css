@@ -30,11 +30,19 @@ body > *:last-child {
   margin-bottom: 0 !important; }
 
 
-.inline {font-family:Papyrus; font-size:0.9em; color: purple;}
+.inline {font-family:Papyrus; font-size:0.9em; color: black;}
 
 .has-orange-glow {
   filter: drop-shadow(0.25rem 0 0.75rem #ef9035);
 }
+
+
+blockquote { /* border-left: 4px solid white; */ /* border: none; */
+  border-left: 6px solid transparent;
+  padding: 0 15px; color: black; }
+  blockquote > :first-child {margin-top: 10; /* color: black; */ }
+  blockquote > :last-child {margin-bottom: 10; /* color: black; */ }
+
 
 table { 
 	border-spacing: 0px; border-collapse: collapse; 
@@ -84,6 +92,7 @@ pre[data-language-display]:before {
 //s { color: green }
 //em { color: red }
 
+em { font-family:Papyrus; font-size:0.9em;}
 
 .center {
   text-align: right;
