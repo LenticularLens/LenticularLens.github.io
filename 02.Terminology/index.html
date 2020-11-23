@@ -158,6 +158,18 @@
 
 
   <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../01.Introduction/" title="1. Introduction" class="md-nav__link">
       1. Introduction
     </a>
@@ -332,6 +344,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fuzzy-logic" class="md-nav__link">
+    Fuzzy Logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#triple-store" class="md-nav__link">
     Triple Store
   </a>
@@ -389,8 +408,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05.LinkConstruction/" title="5. Linkset - Link Construction" class="md-nav__link">
-      5. Linkset - Link Construction
+    <a href="../04.ResultsCombination/" title="5. Understanding Matching Results" class="md-nav__link">
+      5. Understanding Matching Results
     </a>
   </li>
 
@@ -401,8 +420,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06.LinkManipulation/" title="6. Lens - Link Manipulation" class="md-nav__link">
-      6. Lens - Link Manipulation
+    <a href="../05.LinkConstruction/" title="6. Linkset - Link Construction" class="md-nav__link">
+      6. Linkset - Link Construction
     </a>
   </li>
 
@@ -413,8 +432,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../07.LinkVisualisation/" title="7. Visualising link Network" class="md-nav__link">
-      7. Visualising link Network
+    <a href="../06.LinkManipulation/" title="7. Lens - Link Manipulation" class="md-nav__link">
+      7. Lens - Link Manipulation
     </a>
   </li>
 
@@ -425,8 +444,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../08.LinkValidation/" title="8. Link Validation" class="md-nav__link">
-      8. Link Validation
+    <a href="../07.LinkVisualisation/" title="8. Visualising link Network" class="md-nav__link">
+      8. Visualising link Network
     </a>
   </li>
 
@@ -437,8 +456,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.LinkExport/" title="9. Link Export" class="md-nav__link">
-      9. Link Export
+    <a href="../08.LinkValidation/" title="9. Link Validation" class="md-nav__link">
+      9. Link Validation
     </a>
   </li>
 
@@ -449,8 +468,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10.DataIntegration/" title="10. Data Integration" class="md-nav__link">
-      10. Data Integration
+    <a href="../09.LinkExport/" title="10. Link Export" class="md-nav__link">
+      10. Link Export
     </a>
   </li>
 
@@ -461,8 +480,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.Installation/" title="11. Using Lenticular Lens" class="md-nav__link">
-      11. Using Lenticular Lens
+    <a href="../10.DataIntegration/" title="11. Data Integration" class="md-nav__link">
+      11. Data Integration
     </a>
   </li>
 
@@ -473,8 +492,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../12.References/" title="12. References" class="md-nav__link">
-      12. References
+    <a href="../11.Installation/" title="12. Using Lenticular Lens" class="md-nav__link">
+      12. Using Lenticular Lens
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../12.References/" title="13. References" class="md-nav__link">
+      13. References
     </a>
   </li>
 
@@ -629,6 +660,13 @@
         <li class="md-nav__item">
   <a href="#matching-algorithm" class="md-nav__link">
     Matching Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuzzy-logic" class="md-nav__link">
+    Fuzzy Logic
   </a>
   
 </li>
@@ -798,6 +836,9 @@ Therefore, here a linkset is a collection of RDF links between <strong>dataset(s
 In the <strong>Lenticular Lens</strong>, a  Linkset / Lens specification can be viewed as a reproducibility metadata. It provides information on how set of links came to be. In other worlds, it explicitly defines the context in which a link hold and supports decisions making during the validation process (accepting or rejecting a link). </p>
 <h2 id="matching-algorithm">Matching Algorithm<a class="headerlink" href="#matching-algorithm" title="Permanent link">&para;</a></h2>
 <p>A set of rules followed by a computer for finding pairs of matching resources. An algorithm can be further categorised as automated or semi-automated depending on whether it requires user assistance or not. Most matching algorithms employed in the Lenticular Lens are semi-automated.</p>
+<h2 id="fuzzy-logic">Fuzzy Logic<a class="headerlink" href="#fuzzy-logic" title="Permanent link">&para;</a></h2>
+<p>From the family of Many-Valued Logics, Fuzzy Logic is a computing approach based on degrees of Truth stemmed form the unit [0, 1] truth space. Modelling reasoning with vague propositions is often addressed with Fuzzy Logic. A proposition, statement or event is said to be vague (<em>the tomato is ripe</em>) when it is hard or sometimes impossible to establish whether the proposition is completely true or false due to the involvement of vague concepts (<em>ripe</em>), thereby begging for the use of <em>degrees of truth</em> as oppose to <em>binary truth values {0, 1}</em>. &ldquo;For example, we cannot exactly say whether a tomato is ripe or not, but rather can only say that the tomato is ripe to some degree&rdquo; [<a href="../12.References/#Lukasiewicz2008">Lukasiewicz2008</a>]. </p>
+<p><span class="SmallCaps"><em>Degrees of Truth</em></span> is not to be confused with the <span class="SmallCaps"><em>Degrees of Certainty / Confidence</em></span> as the latter is not an assignment of truth value but rather an <em>evaluation</em> of a <em>weighted</em> proposition (proposition with an assigned truth value) regardless of its truth value space ({0, 1} or [0, 1]).</p>
 <h2 id="triple-store"><mark>Triple Store</mark><a class="headerlink" href="#triple-store" title="Permanent link">&para;</a></h2>
 <h2 id="owldl"><mark>OWL/DL</mark><a class="headerlink" href="#owldl" title="Permanent link">&para;</a></h2>
 <h2 id="turtle-prefixes">Turtle Prefixes<a class="headerlink" href="#turtle-prefixes" title="Permanent link">&para;</a></h2>

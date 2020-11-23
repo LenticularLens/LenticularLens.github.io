@@ -1,6 +1,6 @@
 
 body {
-  font-family: Garamond, Helvetica, arial, sans-serif;
+  font-family: Garamond/* , Helvetica, arial, sans-serif */;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
@@ -31,6 +31,11 @@ body > *:last-child {
 
 
 .inline {font-family:Papyrus; font-size:0.9em; color: black;}
+
+.SmallCaps {font-variant:small-caps; font-weight:bold;}
+
+
+.par {font-family:Papyrus; font-size:0.9em; color: purple;}
 
 .has-orange-glow {
   filter: drop-shadow(0.25rem 0 0.75rem #ef9035);
@@ -92,7 +97,7 @@ pre[data-language-display]:before {
 //s { color: green }
 //em { color: red }
 
-em { font-family:Papyrus; font-size:0.9em;}
+em { font-family::Garamond; font-size:0.9em; color: gray}
 
 .center {
   text-align: right;
@@ -105,6 +110,27 @@ em { font-family:Papyrus; font-size:0.9em;}
 	column-gap: 0; 
 }
 
+
+img[alt="Compact"] { 
+  max-width:  300px; 
+  display: block;
+  float: right;
+  margin-left: 1em; 
+}
+
+img[alt="Identity"] { 
+  max-width:  450px; 
+  display: block;
+  float: right;
+  margin-left: 1em; 
+}
+
+<figcaption>{{ .Inner | Markdownify }}</figcaption>
+
+img + em {
+	/* styles here */
+	float: right;
+}
 
 
 
